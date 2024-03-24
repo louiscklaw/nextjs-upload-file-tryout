@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
-while (true) {
-    yarn start
-}
+
+while true; do
+  yarn start
+done
+

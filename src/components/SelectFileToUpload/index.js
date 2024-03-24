@@ -21,10 +21,18 @@ import toast, { Toaster } from 'react-hot-toast';
 import CloseIcon from '@mui/icons-material/Close';
 import ErrorIcon from '@mui/icons-material/Error';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'react-i18next';
+import RedoIcon from '@mui/icons-material/Redo';
 
 export default function SelectFileToUpload() {
+  const { t } = useTranslation();
+  const [show_forwarding_page, setShowForwardingPage] = React.useState(false);
+
   const COLOR_DANGER = '#c0392b';
   const COLOR_SUCCESS = '#16a085';
+
+  const [browser_window, setBrowserWindow] = React.useState();
+
   const ErrSameFileNameNotify = ({ file_names }) =>
     toast(
       t => (
@@ -74,6 +82,7 @@ export default function SelectFileToUpload() {
     fetch('/api/files/upload', { method: 'POST', body: formData })
       .then(response => response.json())
       .then(res_json => {
+        setShowForwardingPage(true);
         helpers.resetForm();
         router.push('/upload_successful');
         localStorage.setItem('dir_prefix', res_json['data']['dir_prefix']);
@@ -90,7 +99,23 @@ export default function SelectFileToUpload() {
     localStorage.setItem('dir_prefix', '');
   }, []);
 
-  if (typeof window !== 'object') return <></>;
+  React.useEffect(() => {
+    setBrowserWindow(window);
+  }, []);
+
+  if (show_forwarding_page)
+    return (
+      <>
+        <Stack direction={'column'} alignItems={'center'}>
+          <Stack direction={'row'} spacing={'1rem'}>
+            <Box>forwarding</Box>
+            <Box>
+              <RedoIcon />
+            </Box>
+          </Stack>
+        </Stack>
+      </>
+    );
 
   return (
     <>
@@ -134,9 +159,9 @@ export default function SelectFileToUpload() {
                 {/* top */}
                 <Stack direction={'column'} justifyContent={'center'} alignItems={'center'} height={'100px'}>
                   <Typography variant="h4" color="text.secondary" gutterBottom>
-                    File upload <br />
+                    {t('File upload')} <br />
                   </Typography>
-                  <Typography variant="h6">(Max file size 100MB)</Typography>
+                  <Typography variant="h6">({t('Max file size')} 100MB)</Typography>
                 </Stack>
                 {/* top end */}
 
@@ -174,8 +199,8 @@ export default function SelectFileToUpload() {
                           padding={'1rem'}
                           sx={{ fontSize: ['2rem', values['avatar'].length > 0 ? '2rem' : '3rem'] }}
                         >
-                          <FolderOpenIcon />
-                          <Typography>choose file to upload</Typography>
+                          <FolderOpenIcon sx={{ fontSize: '3rem' }} />
+                          <Typography>{t('Choose file to upload')}</Typography>
                         </Stack>
                       </Button>
 
@@ -238,7 +263,7 @@ export default function SelectFileToUpload() {
                           startIcon={<HighlightOffIcon />}
                           disabled={values['avatar'].length < 1 || props.isSubmitting}
                         >
-                          Cancel
+                          {t('cancel')}
                         </Button>
                         <Button
                           type={'submit'}
@@ -248,7 +273,7 @@ export default function SelectFileToUpload() {
                           disabled={values['avatar'].length < 1 || props.isSubmitting}
                           sx={{ backgroundColor: COLOR_SUCCESS }}
                         >
-                          upload
+                          {t('upload')}
                         </Button>
                       </Stack>
                     </Stack>
@@ -275,12 +300,11 @@ export default function SelectFileToUpload() {
                       display={['none', 'unset']}
                     >
                       <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                        Or, scan QR code below to access
-                        <br /> the same webpage with mobile
+                        {t('scan qr code')}
                       </Typography>
                       <Box sx={{ margin: '2rem', width: '12rem', height: '15rem' }}>
                         <QRCodeSVG
-                          value={window.location.href}
+                          value={browser_window?.location.href}
                           width={'100%'}
                           height={'100%'}
                           fgColor={'rgb(65, 66, 68)'}

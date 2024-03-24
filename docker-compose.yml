@@ -21,7 +21,6 @@ services:
     #   timeout: 5s
     #   retries: 3
     #   start_period: 30s
-
 # services:
 #   upload_louislabs_com:
 #     image: upload_louislabs_com

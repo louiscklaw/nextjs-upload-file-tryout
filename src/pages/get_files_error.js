@@ -2,6 +2,7 @@ import { Box, Button, Card, CardContent, Stack, Typography } from '@mui/material
 import Link from 'next/link';
 import Image from 'next/image';
 import SorryIconSvg from '../images/sorry-icon.svg';
+import EmojiU1f30bSvg from '../images/Emoji_u1f30b.svg';
 
 export default function CheckFilesError() {
   return (
@@ -10,7 +11,7 @@ export default function CheckFilesError() {
         <Card sx={{ width: '500px', padding: '1rem' }}>
           <CardContent>
             <Stack direction="column" alignItems={'center'} spacing="2rem">
-              <Image src={SorryIconSvg.src} width="300px" height="300px" />
+              <Image src={EmojiU1f30bSvg.src} width="300px" height="300px" />
 
               <Box>
                 <Typography variant="h5">Sorry but error during getting file</Typography>

@@ -112,7 +112,7 @@ export default function UploadSuccessfulBody() {
             padding={['0', '1rem']}
           >
             <Typography variant={['caption', 'h5']} gutterBottom>
-              Upload successful !
+              {t('Upload successful')} !
             </Typography>
             <Box width={['100px', '150px']}>
               <QRCodeSVG
@@ -123,7 +123,7 @@ export default function UploadSuccessfulBody() {
               />
             </Box>
             <Box display={['none', 'unset']} pt={['0', '1rem']}></Box>
-            <Typography variant={['caption', 'h6']}>send letters below back to louis 🙇‍♂️🙇‍♂️</Typography>
+            <Typography variant={['caption', 'h6']}>{t('send letters below back to louis')} 🙇‍♂️🙇‍♂️</Typography>
             <Stack
               direction="row"
               justifyContent={'center'}
@@ -149,14 +149,14 @@ export default function UploadSuccessfulBody() {
             ></Box>
 
             <Typography my="0.5rem" variant={['caption', 'h6']}>
-              you may want to:
+              {t('you may want to')}:
             </Typography>
             <Stack direction={'column'} spacing={'0.5rem'}>
               <Link href="/" replace>
                 <Button size="large" variant={'contained'}>
                   <Stack direction={'row'} width="100%" spacing={'1rem'}>
                     <ArrowBackIcon />
-                    <Box flexGrow={1}> Back</Box>
+                    <Box flexGrow={1}>{t('Back')}</Box>
                   </Stack>
                 </Button>
               </Link>
@@ -168,7 +168,7 @@ export default function UploadSuccessfulBody() {
                 <Button size="large" variant={'contained'}>
                   <Stack direction={'row'} width="100%" spacing={'1rem'}>
                     <ShareIcon />
-                    <Box flexGrow={1}>Copy share Link</Box>
+                    <Box flexGrow={1}>{t('Copy share Link')}</Box>
                   </Stack>
                 </Button>
               </CopyToClipboard>
@@ -180,7 +180,7 @@ export default function UploadSuccessfulBody() {
                 <Button size="large" variant={'contained'} sx={{ backgroundColor: 'rgb(204, 30, 43)' }}>
                   <Stack direction={'row'} width="100%" spacing={'1rem'}>
                     <Image src={CarousellLogoPng.src} width="30px" height="30px" />
-                    <Box flexGrow={1}>Copy carousell link</Box>
+                    <Box flexGrow={1}>{t('Copy carousell link')}</Box>
                   </Stack>
                 </Button>
               </CopyToClipboard>

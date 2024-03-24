@@ -4,12 +4,14 @@ import styles from './Home.module.css';
 import SelectFileToUpload from 'components/SelectFileToUpload';
 import { Box, Stack, Typography } from '@mui/material';
 import UploadSuccessfulBody from 'components/UploadSuccessfulBody';
+import { useTranslation } from 'react-i18next';
 
 export default function UploadSuccessful() {
+  const { t } = useTranslation();
   return (
     <>
       <Head>
-        <title>Upload done</title>
+        <title>{t('Upload done')}</title>
       </Head>
 
       <Stack minHeight={'90vh'} direction={'column'} justifyContent={'center'} alignItems={'center'}>

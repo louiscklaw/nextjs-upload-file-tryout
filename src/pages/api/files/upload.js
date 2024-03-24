@@ -2,9 +2,13 @@ import formidable from 'formidable';
 const { v4: uuidv4 } = require('uuid');
 const fs = require('fs');
 var randomize = require('randomatic');
-const { UPLOAD_STORE_PATH, ZIP_STORE_PATH } = require('./config');
 import rimraf from 'fs-extra';
 const path = require('path');
+import detector from 'i18next-browser-languagedetector';
+
+import { csrf } from '../../../lib/csrf';
+
+const { UPLOAD_STORE_PATH, ZIP_STORE_PATH } = require('./config');
 
 async function upload(req) {
   let result = { data: {} };
@@ -37,7 +41,7 @@ async function upload(req) {
   }
 }
 
-export default async function handler(req, res) {
+export async function handler(req, res) {
   let response = {};
 
   try {
@@ -47,6 +51,8 @@ export default async function handler(req, res) {
     res.status(400).send(err);
   }
 }
+
+export default csrf(handler);
 
 export const config = {
   api: {
