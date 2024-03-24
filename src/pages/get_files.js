@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react';
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import Link from 'next/link';
 import { QRCodeSVG } from 'qrcode.react';
-
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import FileDownloadIcon from '@mui/icons-material/FileDownload';
 export default function GetFiles() {
   const router = useRouter();
   const { dir_prefix } = router.query;
@@ -40,44 +41,94 @@ export default function GetFiles() {
     }
   }, [dir_prefix]);
 
+  if (typeof window !== 'object') return <>loading</>;
+
   return (
     <>
       <Stack direction={'column'} justifyContent={'center'} alignItems={'center'} minHeight={'90vh'}>
-        <Card sx={{ width: '300px' }}>
+        <Card sx={{ width: ['95vw', 'unset'], minWidth: 275, height: ['80vh', 'unset'] }}>
           <CardContent>
-            <Stack direction="column" spacing={'2rem'} alignItems={'center'}>
-              <Stack direction={'row'} justifyContent={'center'}>
-                <CloudDownloadIcon sx={{ fontSize: '5rem' }} />
+            <Stack direction="column" spacing={'2rem'} alignItems={'center'} sx={{ padding: ['0', '3rem'] }}>
+              <Stack direction={'row'} alignItems={'center'} spacing={'1rem'}>
+                <Stack direction={'row'} justifyContent={'center'}>
+                  <CloudDownloadIcon sx={{ fontSize: ['2rem', '5rem'] }} />
+                </Stack>
+                <Stack direction="row" justifyContent={'center'}>
+                  <Typography sx={{ fontSize: ['2rem', '3rem'] }}>Get files</Typography>
+                </Stack>
               </Stack>
 
-              <Stack direction="row" justifyContent={'center'}>
-                <Typography variant="h4">Get files</Typography>
-              </Stack>
+              <Box flexGrow={1}></Box>
 
               <Stack direction="row" justifyContent={'center'}>
-                <Typography variant="text">to download using mobile</Typography>
+                <Typography variant={['caption', 'text']}>to download using mobile, scan below:</Typography>
               </Stack>
 
               <Stack direction="row" justifyContent={'center'}>
                 <QRCodeSVG
-                  value="https://aboutme.louislabs.com/upload/"
+                  value={`${window.location.origin}/get_files?dir_prefix=${dir_prefix}`}
                   width={'150'}
                   height={'150'}
                   fgColor={'rgb(65, 66, 68)'}
                 />
               </Stack>
 
-              <Divider />
+              <Box flexGrow={1}></Box>
 
-              <Button variant="contained" fullWidth onClick={goDownload} disabled={disable_download_button}>
-                {download}
-              </Button>
+              <Box
+                width="100%"
+                minHeight="100px"
+                sx={{
+                  display: 'flex',
+                  flexDirection: ['row', 'column'],
+                  gap: '1rem',
+                }}
+              >
+                <Box sx={{ width: ['50%', '100%'] }}>
+                  <Box
+                    sx={{
+                      margin: '1rem',
+                      height: '100%',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <Link href="/">
+                      <Button variant="outlined" sx={{ height: '100%', width: '90%' }}>
+                        <Stack direction={['column', 'row']} spacing={'1rem'} alignItems={'center'}>
+                          <ChevronLeftIcon />
+                          {'Back'}
+                        </Stack>
+                      </Button>
+                    </Link>
+                  </Box>
+                </Box>
 
-              <Link href="/">
-                <Button variant="outlined" fullWidth>
-                  {'Back'}
-                </Button>
-              </Link>
+                <Box sx={{ width: ['50%', '100%'] }}>
+                  <Box
+                    sx={{
+                      margin: '1rem',
+                      height: '100%',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <Button
+                      variant="contained"
+                      onClick={goDownload}
+                      disabled={disable_download_button}
+                      sx={{ height: '100%', width: '90%' }}
+                    >
+                      <Stack direction={['column', 'row']} spacing={'1rem'} alignItems={'center'}>
+                        <FileDownloadIcon />
+                        {download}
+                      </Stack>
+                    </Button>
+                  </Box>
+                </Box>
+              </Box>
             </Stack>
           </CardContent>
         </Card>

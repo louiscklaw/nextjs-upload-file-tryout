@@ -143,7 +143,7 @@ export default function SelectFileToUpload() {
                 {/* bottom */}
                 <Box>
                   <Stack
-                    direction={['row']}
+                    direction={['column', 'row']}
                     justifyContent={'space-between'}
                     spacing={'1rem'}
                     margin={'1rem'}
@@ -151,7 +151,7 @@ export default function SelectFileToUpload() {
                   >
                     <Stack
                       direction={['column']}
-                      width={['50%']}
+                      width={['100%', '50%']}
                       maxWidth={['300px']}
                       justifyContent="center"
                       alignItems={'center'}
@@ -164,11 +164,17 @@ export default function SelectFileToUpload() {
                         onClick={() => {
                           document.querySelector('#avatar').click();
                         }}
-                        sx={{ height: values['avatar'].length > 0 ? 'unset' : '250px' }}
+                        sx={{ height: ['100px', values['avatar'].length > 0 ? 'unset' : '250px'] }}
                         disabled={props.isSubmitting}
                       >
-                        <Stack direction={'column'} alignItems={'center'} spacing={'1rem'} padding={'1rem'}>
-                          <FolderOpenIcon sx={{ fontSize: values['avatar'].length > 0 ? '2rem' : '3rem' }} />
+                        <Stack
+                          direction={'column'}
+                          alignItems={'center'}
+                          spacing={'1rem'}
+                          padding={'1rem'}
+                          sx={{ fontSize: ['2rem', values['avatar'].length > 0 ? '2rem' : '3rem'] }}
+                        >
+                          <FolderOpenIcon />
                           <Typography>choose file to upload</Typography>
                         </Stack>
                       </Button>
@@ -246,8 +252,18 @@ export default function SelectFileToUpload() {
                         </Button>
                       </Stack>
                     </Stack>
-                    <Divider orientation="vertical" flexItem />
 
+                    <Box>
+                      <Box
+                        sx={{
+                          borderLeft: '1px solid rgba(0,0,0,0.2)',
+                          width: '10px',
+                          height: '100%',
+                          paddingLeft: '2rem',
+                          marginLeft: '2rem',
+                        }}
+                      ></Box>
+                    </Box>
                     <Stack
                       width={['50%']}
                       maxWidth={['300px']}
@@ -256,6 +272,7 @@ export default function SelectFileToUpload() {
                       spacing={'1rem'}
                       margin={'1rem'}
                       padding={'1rem'}
+                      display={['none', 'unset']}
                     >
                       <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                         Or, scan QR code below to access

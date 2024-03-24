@@ -97,87 +97,97 @@ export default function UploadSuccessfulBody() {
     }
   });
 
-  if (typeof window !== 'object') return <></>;
+  if (typeof window !== 'object') return <>loading</>;
 
   return (
     <>
       <Toaster />
-      <Box>
-        <Card sx={{ minWidth: 275 }}>
-          <CardContent>
-            <Stack direction={['column']} alignItems={'center'} spacing={'1rem'} margin={'1rem'} padding={'1rem'}>
-              <Typography variant="h5" gutterBottom>
-                Upload successful !
-              </Typography>
-
+      <Card sx={{ width: ['95vw', 'unset'], minWidth: 275, height: ['80vh', 'unset'] }}>
+        <CardContent sx={{ backgroundColor: 'unset' }}>
+          <Stack
+            direction={['column']}
+            alignItems={'center'}
+            spacing={'1rem'}
+            margin={['0', '1rem']}
+            padding={['0', '1rem']}
+          >
+            <Typography variant={['caption', 'h5']} gutterBottom>
+              Upload successful !
+            </Typography>
+            <Box width={['100px', '150px']}>
               <QRCodeSVG
-                value={`${window.location.origin}/upload/`}
-                width={'150'}
-                height={'150'}
+                value={`${window.location.origin}/get_files?dir_prefix=${dir_prefix}`}
+                width={'100%'}
+                height={'100%'}
                 fgColor={'rgb(65, 66, 68)'}
               />
-
-              <Box pt={'1rem'}></Box>
-
-              <Typography>send letters below back to louis 🙇‍♂️🙇‍♂️</Typography>
-
-              <Stack
-                direction="row"
-                justifyContent={'center'}
-                spacing={'0.5rem'}
-                paddingX={'1rem'}
-                paddingY={'0.5rem'}
-                sx={{ backgroundColor: 'rgba(0,0,0,0.1)', borderRadius: '1rem', cursor: 'pointer' }}
-              >
-                <CopyToClipboard text={dir_prefix} onCopy={() => showTextCopyDone()}>
-                  <Typography variant={'h3'} sx={{ fontFamily: '"Space Mono", monospace;' }}>
-                    {dir_prefix}
-                  </Typography>
-                </CopyToClipboard>
-              </Stack>
-
-              <Typography my="0.5rem" variant="h6">
-                you may want to:
-              </Typography>
-
-              <Stack direction={'column'} spacing={'0.5rem'}>
-                <Link href="/" replace>
-                  <Button size="large" variant={'contained'}>
-                    <Stack direction={'row'} width="100%" spacing={'1rem'}>
-                      <ArrowBackIcon />
-                      <Box flexGrow={1}> Back</Box>
-                    </Stack>
-                  </Button>
-                </Link>
-
-                <CopyToClipboard
-                  text={`${window.location.origin}/get_files?dir_prefix=${dir_prefix}`}
-                  onCopy={() => showLinkCopyDone()}
-                >
-                  <Button size="large" variant={'contained'}>
-                    <Stack direction={'row'} width="100%" spacing={'1rem'}>
-                      <ShareIcon />
-                      <Box flexGrow={1}>Copy share Link</Box>
-                    </Stack>
-                  </Button>
-                </CopyToClipboard>
-
-                <CopyToClipboard
-                  text={`ttps://${window.location.host}/get_files?dir_prefix=${dir_prefix}`}
-                  onCopy={() => showCarousellLinkCopyDone()}
-                >
-                  <Button size="large" variant={'contained'} sx={{ backgroundColor: 'rgb(204, 30, 43)' }}>
-                    <Stack direction={'row'} width="100%" spacing={'1rem'}>
-                      <Image src={CarousellLogoPng.src} width="30px" height="30px" />
-                      <Box flexGrow={1}>Copy carousell link</Box>
-                    </Stack>
-                  </Button>
-                </CopyToClipboard>
-              </Stack>
+            </Box>
+            <Box display={['none', 'unset']} pt={['0', '1rem']}></Box>
+            <Typography variant={['caption', 'h6']}>send letters below back to louis 🙇‍♂️🙇‍♂️</Typography>
+            <Stack
+              direction="row"
+              justifyContent={'center'}
+              spacing={'0.5rem'}
+              paddingX={'1rem'}
+              paddingY={'0.5rem'}
+              sx={{ backgroundColor: 'rgba(0,0,0,0.1)', borderRadius: '1rem', cursor: 'pointer' }}
+            >
+              <CopyToClipboard text={dir_prefix} onCopy={() => showTextCopyDone()}>
+                <Typography variant={'h3'} sx={{ fontFamily: '"Space Mono", monospace;' }}>
+                  {dir_prefix}
+                </Typography>
+              </CopyToClipboard>
             </Stack>
-          </CardContent>
-        </Card>
-      </Box>
+
+            <Box
+              sx={{
+                marginTop: '0.2rem',
+                paddingTop: '0.2rem',
+                borderTop: '1px solid rgba(0,0,0,0.2)',
+                width: '100%',
+              }}
+            ></Box>
+
+            <Typography my="0.5rem" variant={['caption', 'h6']}>
+              you may want to:
+            </Typography>
+            <Stack direction={'column'} spacing={'0.5rem'}>
+              <Link href="/" replace>
+                <Button size="large" variant={'contained'}>
+                  <Stack direction={'row'} width="100%" spacing={'1rem'}>
+                    <ArrowBackIcon />
+                    <Box flexGrow={1}> Back</Box>
+                  </Stack>
+                </Button>
+              </Link>
+
+              <CopyToClipboard
+                text={`${window.location.origin}/get_files?dir_prefix=${dir_prefix}`}
+                onCopy={() => showLinkCopyDone()}
+              >
+                <Button size="large" variant={'contained'}>
+                  <Stack direction={'row'} width="100%" spacing={'1rem'}>
+                    <ShareIcon />
+                    <Box flexGrow={1}>Copy share Link</Box>
+                  </Stack>
+                </Button>
+              </CopyToClipboard>
+
+              <CopyToClipboard
+                text={`ttps://${window.location.host}/get_files?dir_prefix=${dir_prefix}`}
+                onCopy={() => showCarousellLinkCopyDone()}
+              >
+                <Button size="large" variant={'contained'} sx={{ backgroundColor: 'rgb(204, 30, 43)' }}>
+                  <Stack direction={'row'} width="100%" spacing={'1rem'}>
+                    <Image src={CarousellLogoPng.src} width="30px" height="30px" />
+                    <Box flexGrow={1}>Copy carousell link</Box>
+                  </Stack>
+                </Button>
+              </CopyToClipboard>
+            </Stack>
+          </Stack>
+        </CardContent>
+      </Card>
     </>
   );
 }

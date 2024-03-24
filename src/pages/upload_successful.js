@@ -12,9 +12,7 @@ export default function UploadSuccessful() {
         <title>Upload done</title>
       </Head>
 
-      <Box height={'10vh'}></Box>
-
-      <Stack minHeight={'80vh'} direction={'column'} justifyContent={'center'} alignItems={'center'}>
+      <Stack minHeight={'90vh'} direction={'column'} justifyContent={'center'} alignItems={'center'}>
         <UploadSuccessfulBody />
       </Stack>
 
@@ -23,7 +21,9 @@ export default function UploadSuccessful() {
           direction={'column'}
           justifyContent={'center'}
           alignItems={'center'}
-          sx={{ minHeight: 'calc( 100vh - 10vh - 80vh )' }}
+          sx={{
+            minHeight: ['none', 'calc( 100vh  - 90vh )'],
+          }}
         >
           <Stack direction={'row'} justifyContent={'center'}>
             <Typography variant="caption" gutterBottom>
