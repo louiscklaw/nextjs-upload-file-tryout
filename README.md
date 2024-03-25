@@ -16,3 +16,8 @@ docker compose up -d
 
 .\dc_up.bat
 ./dc_up.sh
+
+
+# TODO
+
+discord alert to louis when file arrive
