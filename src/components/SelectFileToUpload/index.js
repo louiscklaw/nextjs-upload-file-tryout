@@ -251,9 +251,9 @@ export default function SelectFileToUpload() {
 
                       <Stack
                         direction={['row']}
-                        justifyContent={'space-between'}
                         sx={{ width: '100%' }}
                         spacing={'1rem'}
+                        justifyContent={'space-between'}
                       >
                         <Button
                           type={'reset'}
@@ -292,12 +292,12 @@ export default function SelectFileToUpload() {
                     <Stack
                       width={['50%']}
                       maxWidth={['300px']}
-                      justifyContent={values['avatar'].length > 0 ? 'center' : 'flex-start'}
-                      alignItems={'center'}
                       spacing={'1rem'}
                       margin={'1rem'}
                       padding={'1rem'}
-                      display={['none', 'unset']}
+                      display={['none', 'flex']}
+                      justifyContent={values['avatar'].length > 0 ? 'center' : 'flex-start'}
+                      alignItems={'center'}
                     >
                       <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                         {t('scan qr code')}

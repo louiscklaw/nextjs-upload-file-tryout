@@ -6,17 +6,22 @@ import Link from 'next/link';
 import { QRCodeSVG } from 'qrcode.react';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
+import { useTranslation } from 'react-i18next';
+
 export default function GetFiles() {
   const router = useRouter();
   const { dir_prefix } = router.query;
   const [disable_download_button, setDisableDownloadButton] = useState(true);
   const [download, setDownload] = useState('Preparing ...');
 
+  const { t } = useTranslation();
+
   const goDownload = () => {
     setDisableDownloadButton(true);
-    setDownload('downloading ... ');
+    setDownload(t('preparing ... '));
 
     router.push(`/api/files/get?dir_prefix=${dir_prefix}`);
+    setDownload(t('start download ... '));
   };
 
   useEffect(() => {
@@ -31,7 +36,7 @@ export default function GetFiles() {
 
           if (res_json['status'] == 'OK') {
             setDisableDownloadButton(false);
-            setDownload('Download');
+            setDownload(t('download'));
           }
         })
         .catch(err => {
@@ -54,14 +59,14 @@ export default function GetFiles() {
                   <CloudDownloadIcon sx={{ fontSize: ['2rem', '5rem'] }} />
                 </Stack>
                 <Stack direction="row" justifyContent={'center'}>
-                  <Typography sx={{ fontSize: ['2rem', '3rem'] }}>Get files</Typography>
+                  <Typography sx={{ fontSize: ['2rem', '3rem'] }}>{t('Get files')}</Typography>
                 </Stack>
               </Stack>
 
               <Box flexGrow={1}></Box>
 
               <Stack direction="row" justifyContent={'center'}>
-                <Typography variant={['caption', 'text']}>to download using mobile, scan below:</Typography>
+                <Typography variant={['caption', 'text']}>{t('to download using mobile, scan below:')}</Typography>
               </Stack>
 
               <Stack direction="row" justifyContent={'center'}>
@@ -95,10 +100,10 @@ export default function GetFiles() {
                     }}
                   >
                     <Link href="/">
-                      <Button variant="outlined" sx={{ height: '100%', width: '90%' }}>
+                      <Button variant="outlined" sx={{ height: '100%', width: '90%' }} size={'large'}>
                         <Stack direction={['column', 'row']} spacing={'1rem'} alignItems={'center'}>
                           <ChevronLeftIcon />
-                          {'Back'}
+                          {t('Back')}
                         </Stack>
                       </Button>
                     </Link>
@@ -120,8 +125,14 @@ export default function GetFiles() {
                       onClick={goDownload}
                       disabled={disable_download_button}
                       sx={{ height: '100%', width: '90%' }}
+                      size={'large'}
                     >
-                      <Stack direction={['column', 'row']} spacing={'1rem'} alignItems={'center'}>
+                      <Stack
+                        direction={['column', 'row']}
+                        spacing={'1rem'}
+                        alignItems={'center'}
+                        style={{ textTransform: 'capitalize' }}
+                      >
                         <FileDownloadIcon />
                         {download}
                       </Stack>

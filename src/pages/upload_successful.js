@@ -5,9 +5,11 @@ import SelectFileToUpload from 'components/SelectFileToUpload';
 import { Box, Stack, Typography } from '@mui/material';
 import UploadSuccessfulBody from 'components/UploadSuccessfulBody';
 import { useTranslation } from 'react-i18next';
+import { useEffect } from 'react';
 
 export default function UploadSuccessful() {
   const { t } = useTranslation();
+
   return (
     <>
       <Head>

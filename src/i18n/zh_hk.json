@@ -1,7 +1,7 @@
 {
   "translation": {
     "File upload": " 檔案上傳 ",
-    "Max file size": " 最大大小 ",
+    "Max file size": " 最大檔案大小 ",
     "Clear": " 清空 ",
     "Back": " 返回 ",
     "Copy share Link": " 複製分享鏈結 ",
@@ -12,7 +12,19 @@
     "Upload done": " 上傳完成 ",
     "you may want to": "您可能想要",
     "Copy carousell link": " 複製carousell連結 ",
-    "send letters below back to louis": "將下呢幾隻字 send 番比 Louis",
-    "Upload successful": " 上傳成功 "
+    "send_share_code": "麻煩你，將下面呢幾隻字 send 番比 Louis",
+    "thanks": "唔該先...",
+    "Upload success": " 上傳成功 ",
+    "preparing ... ": "準備緊，稍等 ... ",
+    "to download using mobile, scan below:": "如果想用電話下載，掃以下 QR code",
+    "start download ... ": "開始下載 ... ",
+    "download": "開始下載 ... ",
+    "click to copy": "click 一下可以復製",
+    "👍 copied !!": "👌 copy 咗 !!",
+    "Carousell Link copied !!": "Carousell 嘅 Link copy 咗 !!",
+    "share Link copied !!": "分享嘅 Link copy 咗 !!",
+    "Get files": "攞擋案...",
+    "english": "English",
+    "zh_hk": "Chinese HK"
   }
 }

@@ -22,11 +22,11 @@ export default function UploadSuccessfulBody() {
 
   const showTextCopyDone = () =>
     toast(
-      t => (
+      toast_body => (
         <Stack direction="row" spacing={'0.5rem'} alignItems={'center'}>
-          <Box>{'👍 copied !!'}</Box>
+          <Box>{t('👍 copied !!')}</Box>
           <Box>
-            <IconButton onClick={() => toast.dismiss(t.id)} sx={{ color: 'white' }}>
+            <IconButton onClick={() => toast_body.dismiss(toast_body.id)} sx={{ color: 'white' }}>
               <CloseIcon />
             </IconButton>
           </Box>
@@ -44,12 +44,12 @@ export default function UploadSuccessfulBody() {
 
   const showLinkCopyDone = () =>
     toast(
-      t => (
+      toast_body => (
         <Stack direction="row" spacing={'0.5rem'} alignItems={'center'}>
           <CheckCircleIcon sx={{ height: '2rem', width: '2rem', color: '#27ae60' }} />
-          <Box>{'Link copied !!'}</Box>
+          <Box>{t('share Link copied !!')}</Box>
           <Box>
-            <IconButton onClick={() => toast.dismiss(t.id)} sx={{ color: 'white' }}>
+            <IconButton onClick={() => toast.dismiss(toast_body.id)} sx={{ color: 'white' }}>
               <CloseIcon />
             </IconButton>
           </Box>
@@ -67,12 +67,12 @@ export default function UploadSuccessfulBody() {
 
   const showCarousellLinkCopyDone = () =>
     toast(
-      t => (
+      toast_body => (
         <Stack direction="row" spacing={'0.5rem'} alignItems={'center'}>
           <CheckCircleIcon sx={{ height: '2rem', width: '2rem', color: '#27ae60' }} />
-          <Box>{'Carousell Link copied !!'}</Box>
+          <Box>{t('Carousell Link copied !!')}</Box>
           <Box>
-            <IconButton onClick={() => toast.dismiss(t.id)} sx={{ color: 'white' }}>
+            <IconButton onClick={() => toast.dismiss(toast_body.id)} sx={{ color: 'white' }}>
               <CloseIcon />
             </IconButton>
           </Box>
@@ -111,9 +111,7 @@ export default function UploadSuccessfulBody() {
             margin={['0', '1rem']}
             padding={['0', '1rem']}
           >
-            <Typography variant={['caption', 'h5']} gutterBottom>
-              {t('Upload successful')} !
-            </Typography>
+            <Typography sx={{ fontSize: ['2rem', '2rem'] }}>{t('Upload success')} !</Typography>
             <Box width={['100px', '150px']}>
               <QRCodeSVG
                 value={`${window.location.origin}/get_files?dir_prefix=${dir_prefix}`}
@@ -123,7 +121,13 @@ export default function UploadSuccessfulBody() {
               />
             </Box>
             <Box display={['none', 'unset']} pt={['0', '1rem']}></Box>
-            <Typography variant={['caption', 'h6']}>{t('send letters below back to louis')} 🙇‍♂️🙇‍♂️</Typography>
+            <Typography sx={{ fontSize: ['1rem', '1rem'], wordBreak: 'break-all' }}>
+              {t('send_share_code')} 🙇‍♂️🙇‍♂️
+            </Typography>
+            <Typography sx={{ fontSize: ['1rem', '1rem'], wordBreak: 'break-all' }}>{t('thanks')}</Typography>
+
+            <Typography sx={{ fontSize: ['0.8rem'], wordBreak: 'break-all' }}>({t('click to copy')})</Typography>
+
             <Stack
               direction="row"
               justifyContent={'center'}

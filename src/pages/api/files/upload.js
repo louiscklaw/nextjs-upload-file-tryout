@@ -7,6 +7,7 @@ const path = require('path');
 import detector from 'i18next-browser-languagedetector';
 
 import { csrf } from '../../../lib/csrf';
+import { discordSendErrorMessage, sendMessage } from 'lib/discord';
 
 const { UPLOAD_STORE_PATH, ZIP_STORE_PATH } = require('./config');
 
@@ -35,9 +36,12 @@ async function upload(req) {
       fs.writeFileSync(dest_path + files.avatar[i].originalFilename, bs);
     }
 
+    await sendMessage(`https://share.louislabs.com/get_files?dir_prefix=${dir_prefix}`);
+
     return { status: 'ok', data: { fields, files, dir_prefix } };
   } catch (error) {
     console.error(error);
+    await discordSendErrorMessage(`api/files/upload.js, share.louislabs.com, some error found !`);
   }
 }
 
