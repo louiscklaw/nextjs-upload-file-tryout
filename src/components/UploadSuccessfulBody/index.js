@@ -14,8 +14,10 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import toast, { Toaster } from 'react-hot-toast';
 import CloseIcon from '@mui/icons-material/Close';
+import { useTheme } from '@emotion/react';
 
 export default function UploadSuccessfulBody() {
+  const theme = useTheme();
   const { t } = useTranslation();
   const router = useRouter();
   const [dir_prefix, setDirPrefix] = useState('');
@@ -26,14 +28,21 @@ export default function UploadSuccessfulBody() {
         <Stack direction="row" spacing={'0.5rem'} alignItems={'center'}>
           <Box>{t('👍 copied !!')}</Box>
           <Box>
-            <IconButton onClick={() => toast_body.dismiss(toast_body.id)} sx={{ color: 'white' }}>
+            <IconButton
+              onClick={() => {
+                if (toast_body?.dismiss) {
+                  toast_body.dismiss(toast_body.id);
+                }
+              }}
+              sx={{ color: 'white' }}
+            >
               <CloseIcon />
             </IconButton>
           </Box>
         </Stack>
       ),
       {
-        duration: 15 * 1000,
+        duration: 5 * 1000,
         style: {
           borderRadius: '10px',
           background: '#333',
@@ -56,7 +65,7 @@ export default function UploadSuccessfulBody() {
         </Stack>
       ),
       {
-        duration: 15 * 1000,
+        duration: 5 * 1000,
         style: {
           borderRadius: '10px',
           background: '#333',
@@ -79,7 +88,7 @@ export default function UploadSuccessfulBody() {
         </Stack>
       ),
       {
-        duration: 15 * 1000,
+        duration: 5 * 1000,
         style: {
           borderRadius: '10px',
           background: '#333',
@@ -126,7 +135,14 @@ export default function UploadSuccessfulBody() {
             </Typography>
             <Typography sx={{ fontSize: ['1rem', '1rem'], wordBreak: 'break-all' }}>{t('thanks')}</Typography>
 
-            <Typography sx={{ fontSize: ['0.8rem'], wordBreak: 'break-all' }}>({t('click to copy')})</Typography>
+            <Typography
+              sx={{
+                fontSize: ['0.8rem'],
+                wordBreak: 'break-all',
+              }}
+            >
+              ({t('click to copy')})
+            </Typography>
 
             <Stack
               direction="row"
@@ -134,7 +150,14 @@ export default function UploadSuccessfulBody() {
               spacing={'0.5rem'}
               paddingX={'1rem'}
               paddingY={'0.5rem'}
-              sx={{ backgroundColor: 'rgba(0,0,0,0.1)', borderRadius: '1rem', cursor: 'pointer' }}
+              sx={{
+                backgroundColor: 'rgba(0,0,0,0.1)',
+                ':hover': {
+                  bgcolor: 'rgba(0, 0, 0, 0.3)',
+                },
+                borderRadius: '1rem',
+                cursor: 'pointer',
+              }}
             >
               <CopyToClipboard text={dir_prefix} onCopy={() => showTextCopyDone()}>
                 <Typography variant={'h3'} sx={{ fontFamily: '"Space Mono", monospace;' }}>
@@ -181,7 +204,16 @@ export default function UploadSuccessfulBody() {
                 text={`ttps://${window.location.host}/get_files?dir_prefix=${dir_prefix}`}
                 onCopy={() => showCarousellLinkCopyDone()}
               >
-                <Button size="large" variant={'contained'} sx={{ backgroundColor: 'rgb(204, 30, 43)' }}>
+                <Button
+                  size="large"
+                  variant={'contained'}
+                  sx={{
+                    backgroundColor: theme.palette.carousell.main,
+                    ':hover': {
+                      bgcolor: theme.palette.carousell.hover,
+                    },
+                  }}
+                >
                   <Stack direction={'row'} width="100%" spacing={'1rem'}>
                     <Image src={CarousellLogoPng.src} width="30px" height="30px" />
                     <Box flexGrow={1}>{t('Copy carousell link')}</Box>

@@ -23,32 +23,37 @@ import ErrorIcon from '@mui/icons-material/Error';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
 import RedoIcon from '@mui/icons-material/Redo';
+import { useTheme } from '@emotion/react';
 
 export default function SelectFileToUpload() {
   const { t } = useTranslation();
+  const theme = useTheme();
   const [show_forwarding_page, setShowForwardingPage] = React.useState(false);
 
-  const COLOR_DANGER = '#c0392b';
-  const COLOR_SUCCESS = '#16a085';
+  const COLOR_DANGER = theme.palette.danger;
 
   const [browser_window, setBrowserWindow] = React.useState();
 
   const ErrSameFileNameNotify = ({ file_names }) =>
     toast(
-      t => (
+      toast_body => (
         <Stack direction="row" spacing={'0.5rem'} alignItems={'center'}>
           <ErrorIcon sx={{ height: '2rem', width: '2rem', color: COLOR_DANGER }} />
           <Box>
-            {'Sorry but uploading a file with the same name not supported !!' + '(' + file_names.join(', ') + ')'}
+            {t('Sorry but uploading a file with the same name not supported') +
+              ' !!' +
+              '(' +
+              file_names.join(', ') +
+              ')'}
           </Box>
           <Box>
-            <IconButton onClick={() => toast.dismiss(t.id)}>
+            <IconButton onClick={() => toast.dismiss(toast_body.id)}>
               <CloseIcon />
             </IconButton>
           </Box>
         </Stack>
       ),
-      { duration: 60 * 1000 },
+      { duration: 15 * 1000 },
     );
 
   const ErrUploadFile = ({ err_message }) =>
@@ -64,7 +69,7 @@ export default function SelectFileToUpload() {
           </Box>
         </Stack>
       ),
-      { duration: 9915000 },
+      { duration: 15 * 1000 },
     );
 
   const initialValues = {
@@ -204,7 +209,27 @@ export default function SelectFileToUpload() {
                         </Stack>
                       </Button>
 
-                      <Stack direction={'column'} spacing={'0.2rem'} sx={{ width: '100%' }}>
+                      <Stack
+                        direction={'column'}
+                        spacing={'0.2rem'}
+                        sx={{
+                          width: '100%',
+                          backgroundColor: values['avatar'].length > 0 ? 'rgba(128,128,128,0.1)' : 'unset',
+                          padding: '1rem',
+                          borderRadius: '5px',
+                        }}
+                      >
+                        {values['avatar'].length > 0 ? (
+                          <>
+                            <Typography variant={'caption'} sx={{ fontWeight: 'bold', textAlign: 'center' }}>
+                              {t('file list')}:
+                            </Typography>
+                            <Box sx={{ borderTop: '1px solid rgba(32,32,32,0.3)' }}></Box>
+                          </>
+                        ) : (
+                          <></>
+                        )}
+
                         {values['avatar'].map((f, i) => {
                           return (
                             <Box key={i}>
@@ -271,7 +296,7 @@ export default function SelectFileToUpload() {
                           fullWidth
                           startIcon={<CloudUploadIcon />}
                           disabled={values['avatar'].length < 1 || props.isSubmitting}
-                          sx={{ backgroundColor: COLOR_SUCCESS }}
+                          color={'success'}
                         >
                           {t('upload')}
                         </Button>
