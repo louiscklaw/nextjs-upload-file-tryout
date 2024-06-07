@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from './Home.module.css';
 import SelectFileToUpload from 'components/SelectFileToUpload';
-import { Box, IconButton, Menu, MenuItem, Stack, Typography } from '@mui/material';
+import { Box, Button, IconButton, Menu, MenuItem, Stack, Typography } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import TranslateIcon from '@mui/icons-material/Translate';
 import { useTranslation } from 'react-i18next';
@@ -74,7 +74,7 @@ export default function Home() {
         >
           <Stack direction={'row'} justifyContent={'center'}>
             <Typography variant="caption" gutterBottom>
-              2024 louislabs.com
+              2024 https://share.louislabs.com
             </Typography>
           </Stack>
 

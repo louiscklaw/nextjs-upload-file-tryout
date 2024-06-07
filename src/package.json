@@ -20,6 +20,7 @@
     "@fontsource/roboto": "^4.5.1",
     "@mui/icons-material": "^5.2.4",
     "@mui/material": "^5.2.4",
+    "@sentry/nextjs": "8",
     "adm-zip": "^0.5.12",
     "formidable": "^3.5.1",
     "formik": "^2.4.5",
