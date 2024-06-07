@@ -6,14 +6,16 @@ services:
     ports:
       - '3033:3000'
     restart: unless-stopped
+
     # path to package.json
     working_dir: /usr/bin/app/src
-    # command: ./entry.sh
-    command: sleep infinity
+
+    # command: sleep infinity
+    command: ./entry.sh
 
     volumes:
-      - ./upload_store:/usr/bin/app/upload_store
-      - ./zip_work_dir:/usr/bin/app/zip_work_dir
+      - ./volumes/upload_store:/usr/bin/app/upload_store
+      - ./volumes/zip_work_dir:/usr/bin/app/zip_work_dir
 
     # healthcheck:
     #   test: ['CMD', 'curl', '-f', 'http://localhost:3000/']
@@ -21,11 +23,3 @@ services:
     #   timeout: 5s
     #   retries: 3
     #   start_period: 30s
-# services:
-#   upload_louislabs_com:
-#     image: upload_louislabs_com
-#     ports:
-#       - '3000:3000'
-#     restart: unless-stopped
-#     working_dir: /usr/bin/app
-#     command: sleep infinity
