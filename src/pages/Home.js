@@ -8,6 +8,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import TranslateIcon from '@mui/icons-material/Translate';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 export default function Home() {
   const router = useRouter();
@@ -74,7 +75,9 @@ export default function Home() {
         >
           <Stack direction={'row'} justifyContent={'center'}>
             <Typography variant="caption" gutterBottom>
-              2024 https://share.louislabs.com
+              <Link href="https://app.logrocket.com/share-louislabs-com/share-louislabs-com">
+                2024 https://share.louislabs.com
+              </Link>
             </Typography>
           </Stack>
 
@@ -87,7 +90,7 @@ export default function Home() {
 
             <Stack direction={'row'} justifyContent={'center'}>
               <Typography variant="caption" gutterBottom>
-                sentry
+                <Link href="https://louiscklaw-github-io.sentry.io/projects/share-louislabs-com" >sentry</Link>
               </Typography>
             </Stack>
           </Stack>

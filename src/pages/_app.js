@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { CacheProvider } from '@emotion/react';
 import { ThemeProvider, CssBaseline } from '@mui/material';
@@ -9,10 +9,17 @@ import '../styles/globals.css';
 
 import '../i18n';
 
+import LogRocket from 'logrocket';
+
 const clientSideEmotionCache = createEmotionCache();
 
 const MyApp = props => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+
+  useEffect(()=>{
+    LogRocket.init('share-louislabs-com/share-louislabs-com');
+    console.log('logrocket init done');
+  },[])
 
   return (
     <CacheProvider value={emotionCache}>
