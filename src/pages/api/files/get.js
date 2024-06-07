@@ -11,15 +11,32 @@ const { UPLOAD_STORE_PATH, ZIP_STORE_PATH } = require('./config');
 const ERR_DIR_PREFIX_NOT_FOUND = 1;
 
 async function createZipArchive(file_path, output_zip_file) {
-  const zip = new AdmZip();
+  return new Promise((resolve, reject) => {
+    try {
+      var zip = new AdmZip();
 
-  // Add some files to the zip archive
-  zip.addLocalFolder(file_path);
+      console.log(file_path);
 
-  // Save the zip archive to disk
-  const outputFile = path.join(output_zip_file);
-  await zip.writeZipPromise(outputFile);
-  console.log(`Successfully created ${outputFile}`);
+      // Add some files to the zip archive
+      zip.addLocalFolder(file_path);
+
+      // update file headers
+      zip.getEntries().forEach(entry => {
+        entry.header.flags |= 0x0800; // Set bit 11 - APP Note 4.4.4 Language encoding flag (EFS)
+      });
+
+      // Save the zip archive to disk
+      const outputFile = path.join(output_zip_file);
+
+      zip.writeZip(outputFile);
+
+      console.log(`Successfully created ${outputFile}`);
+
+      resolve(outputFile);
+    } catch (error) {
+      reject(error);
+    }
+  });
 }
 
 async function get(req) {
