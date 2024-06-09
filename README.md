@@ -1,10 +1,30 @@
 # nextjs-upload-file-tryout
 
-### dev
+### dev (docker image)
 
-cd src
-yarn
-yarn dev
+```bash
+# build and push docker image
+$ git pull && ./scripts/dc_build.sh
+
+# on target machine
+$ ./scripts/dc_update.sh
+
+```
+
+### dev (application linux / windows)
+
+```bash
+$ cd src
+$ yarn
+$ yarn dev
+```
+
+### build (application linux/windows)
+```bash
+$ cd src
+$ yarn
+$ yarn build
+```
 
 ### deploy
 
