@@ -2,6 +2,6 @@
 
 
 while true; do
-  yarn start
+  yarn server
 done
 
