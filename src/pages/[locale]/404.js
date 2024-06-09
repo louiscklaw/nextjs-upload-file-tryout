@@ -1,4 +1,6 @@
 import { useTranslation } from 'next-i18next';
+import { Box, Button, Stack, Typography } from '@mui/material';
+
 import { getStaticPaths, makeStaticProps } from '../../lib/getStatic';
 
 import { Header } from '../../components/Header';
@@ -11,15 +13,17 @@ const Homepage = () => {
 
   return (
     <>
-      <main>
-        <Header heading={t('h1')} title={t('title')} />
-        <div>
+      <Stack direction="column" width={'calc( 100vw - 20px )'} height={'95vh'} justifyContent={'center'}>
+        <Stack gap={'3rem'}>
+          <Typography variant="h1" fontSize={'2rem'}>
+            {t('sorry some error occurred')}
+          </Typography>
+
           <Link href="/">
-            <button type="button">{t('common:back-to-home')}</button>
+            <Button variant="contained">{t('Back')}</Button>
           </Link>
-        </div>
-      </main>
-      <Footer />
+        </Stack>
+      </Stack>
     </>
   );
 };

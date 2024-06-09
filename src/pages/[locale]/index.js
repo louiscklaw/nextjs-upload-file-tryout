@@ -1,52 +1,35 @@
 import React, { useEffect } from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
 import SelectFileToUpload from '../../components/SelectFileToUpload';
-import { Box, Button, IconButton, Menu, MenuItem, Stack, Typography } from '@mui/material';
-import TranslateIcon from '@mui/icons-material/Translate';
-import DeleteIcon from '@mui/icons-material/Delete';
+import { Box, Stack, Typography } from '@mui/material';
 import { useRouter } from 'next/router';
 
 import { useTranslation } from 'next-i18next';
 import { getStaticPaths, makeStaticProps } from '../../lib/getStatic';
 import { useTheme } from '@emotion/react';
 
-import { Header } from '../../components/Header';
-import { Footer } from '../../components/Footer';
-
 // handled lang options link
 import Link from 'next/link';
 
 const Homepage = () => {
-  const router = useRouter();
   const { t } = useTranslation(['common', 'footer']);
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
   const theme = useTheme();
 
-  const handleClick = event => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  const router = useRouter();
+  const { locale } = router.query;
 
-  const changeToEnglish = () => {
-    localStorage.setItem('i18nextLng', 'en');
-    handleClose();
-    router.reload();
-  };
+  useEffect(() => {
+    localStorage.setItem('i18nextLng', locale);
 
-  const changeToZhHk = () => {
-    localStorage.setItem('i18nextLng', 'zh_hk');
-    handleClose();
-    router.reload();
-  };
-  const changeToZhCn = () => {
-    localStorage.setItem('i18nextLng', 'zh_cn');
-    handleClose();
-    router.reload();
-  };
+    fetch(`${window.location.origin}/api/xsrf_check`)
+      .then(res => res.json())
+      .then(res_json => {
+        let { result } = res_json;
+        if (result != 'xsrf exist') {
+          router.replace(`${window.location.origin}/`);
+        }
+      });
+  }, []);
 
   return (
     <>
