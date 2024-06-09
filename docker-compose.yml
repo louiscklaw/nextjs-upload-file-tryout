@@ -14,6 +14,7 @@ services:
     command: ./entry.sh
 
     volumes:
+      - ./volumes/.env.local:/usr/bin/app/.env.local
       - ./volumes/upload_store:/usr/bin/app/upload_store
       - ./volumes/zip_work_dir:/usr/bin/app/zip_work_dir
 
