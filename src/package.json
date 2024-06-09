@@ -6,7 +6,7 @@
     "404": "cp out/404/index.html out/404.html",
     "dev": "next dev -H 0.0.0.0",
     "build": "next build",
-    "postbuild": "@REM npm run 404",
+    "postbuild_disabled": "npm run 404",
     "server": "next start  -H 0.0.0.0",
     "start": "npm run dev",
     "lint": "next lint",
