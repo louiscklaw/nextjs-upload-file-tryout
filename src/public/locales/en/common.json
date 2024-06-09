@@ -4,9 +4,9 @@
   "error-without-status": "An error occurred on the server",
   "h1": "A simple example",
   "title": "Home | next-i18next",
-  "zh_HK":"繁",
-  "zh_CN":"簡",
-  "en":"Eng",
+  "zh_HK": "繁",
+  "zh_CN": "簡",
+  "en": "Eng",
   "to-second-page": "To second page",
   "File list": "File list"
 }
