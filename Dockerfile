@@ -11,3 +11,5 @@ RUN cd /usr/bin/app/src && \
 
 # path to package.json
 WORKDIR /usr/bin/app
+
+ENTRYPOINT ["./entry.sh"]
