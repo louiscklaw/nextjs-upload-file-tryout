@@ -6,8 +6,7 @@ RUN mkdir -p /usr/bin/app/src
 ADD ./src /usr/bin/app/src
 
 RUN cd /usr/bin/app/src && \
-    yarn && \
-    yarn build
+    yarn
 
 # path to package.json
 WORKDIR /usr/bin/app
