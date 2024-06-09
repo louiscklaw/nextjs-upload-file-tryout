@@ -1,25 +1,14 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
+import { appWithTranslation } from 'next-i18next';
+
 import { CacheProvider } from '@emotion/react';
 import { ThemeProvider, CssBaseline } from '@mui/material';
-
 import createEmotionCache from '../utility/createEmotionCache';
 import lightTheme from '../styles/theme/lightTheme';
-import '../styles/globals.css';
-
-import '../i18n';
-
-import LogRocket from 'logrocket';
 
 const clientSideEmotionCache = createEmotionCache();
 
 const MyApp = props => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
-
-  useEffect(()=>{
-    LogRocket.init('share-louislabs-com/share-louislabs-com');
-    console.log('logrocket init done');
-  },[])
 
   return (
     <CacheProvider value={emotionCache}>
@@ -31,10 +20,4 @@ const MyApp = props => {
   );
 };
 
-export default MyApp;
-
-MyApp.propTypes = {
-  Component: PropTypes.elementType.isRequired,
-  emotionCache: PropTypes.object,
-  pageProps: PropTypes.object.isRequired,
-};
+export default appWithTranslation(MyApp);

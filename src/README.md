@@ -20,8 +20,14 @@ http://localhost:3000/api/files/check?dir_prefix=DE
 
 http://localhost:3000/getFiles?dir_prefix=DE
 
+## to deploy (next)
+```bash
+yarn
+yarn start
+# running on port 3000
+```
 
-## to deploy
+## to deploy (docker)
 
 ```bash
 ./dc_build.bat

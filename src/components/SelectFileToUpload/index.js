@@ -12,7 +12,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import Divider from '@mui/material/Divider';
 import { QRCodeSVG } from 'qrcode.react';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-import { Formik, Field, Form } from 'formik';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import prettyBytes from 'pretty-bytes';
 import FolderOpenIcon from '@mui/icons-material/FolderOpen';
@@ -21,11 +21,18 @@ import toast, { Toaster } from 'react-hot-toast';
 import CloseIcon from '@mui/icons-material/Close';
 import ErrorIcon from '@mui/icons-material/Error';
 import { useRouter } from 'next/router';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import RedoIcon from '@mui/icons-material/Redo';
 import { useTheme } from '@emotion/react';
+import Link from '../../components/Link';
+import AttachFileIcon from '@mui/icons-material/AttachFile';
+
+const toast_duration = 15 * 1000;
 
 export default function SelectFileToUpload() {
+  const router = useRouter();
+  const { locale } = router.query;
+
   const { t } = useTranslation();
   const theme = useTheme();
   const [show_forwarding_page, setShowForwardingPage] = React.useState(false);
@@ -35,10 +42,9 @@ export default function SelectFileToUpload() {
   const [browser_window, setBrowserWindow] = React.useState();
 
   const ErrSameFileNameNotify = ({ file_names }) =>
-    toast(
-      toast_body => (
+    toast.error(
+      toast_up => (
         <Stack direction="row" spacing={'0.5rem'} alignItems={'center'}>
-          <ErrorIcon sx={{ height: '2rem', width: '2rem', color: COLOR_DANGER }} />
           <Box>
             {t('Sorry but uploading a file with the same name not supported') +
               ' !!' +
@@ -47,36 +53,34 @@ export default function SelectFileToUpload() {
               ')'}
           </Box>
           <Box>
-            <IconButton onClick={() => toast.dismiss(toast_body.id)}>
+            <IconButton onClick={() => toast.dismiss(toast_up.id)}>
               <CloseIcon />
             </IconButton>
           </Box>
         </Stack>
       ),
-      { duration: 15 * 1000 },
+      { duration: toast_duration },
     );
 
   const ErrUploadFile = ({ err_message }) =>
-    toast(
-      t => (
+    toast.error(
+      toast_up => (
         <Stack direction="row" spacing={'0.5rem'} alignItems={'center'}>
-          <ErrorIcon sx={{ height: '2rem', width: '2rem', color: COLOR_DANGER }} />
-          <Box>{'Sorry but file with the same name not supported ' + '(' + err_message + ')'}</Box>
+          <Box>{t('Sorry but error found, call louis') + '(err message:' + err_message + ')'}</Box>
           <Box>
-            <IconButton onClick={() => toast.dismiss(t.id)}>
+            <IconButton onClick={() => toast.dismiss(toast_up.id)}>
               <CloseIcon />
             </IconButton>
           </Box>
         </Stack>
       ),
-      { duration: 15 * 1000 },
+      { duration: toast_duration },
     );
 
   const initialValues = {
     avatar: [],
   };
 
-  const router = useRouter();
   const onSubmit = (values, helpers) => {
     const formData = new FormData();
 
@@ -84,16 +88,25 @@ export default function SelectFileToUpload() {
       formData.append('avatar', values.avatar[i]);
     }
 
-    fetch('/api/files/upload', { method: 'POST', body: formData })
+    fetch(`${window.location.origin}/api/files/upload/`, { method: 'POST', body: formData })
       .then(response => response.json())
       .then(res_json => {
-        setShowForwardingPage(true);
-        helpers.resetForm();
-        router.push('/upload_successful');
-        localStorage.setItem('dir_prefix', res_json['data']['dir_prefix']);
+        if (res_json?.message) {
+          ErrUploadFile({ err_message: res_json.message });
+        } else {
+          setShowForwardingPage(true);
+          helpers.resetForm();
+
+          console.log({ res_json });
+
+          localStorage.setItem('dir_prefix', res_json['data']['dir_prefix']);
+
+          router.push(`/${locale}/upload_successful`);
+        }
       })
       .catch(err => {
         ErrUploadFile({ err_message: err.message });
+        console.log(err);
       })
       .finally(() => {
         helpers.setSubmitting(false);
@@ -113,9 +126,15 @@ export default function SelectFileToUpload() {
       <>
         <Stack direction={'column'} alignItems={'center'}>
           <Stack direction={'row'} spacing={'1rem'}>
-            <Box>forwarding</Box>
+            <Box>{t('forwarding')}</Box>
             <Box>
               <RedoIcon />
+            </Box>
+          </Stack>
+
+          <Stack>
+            <Box paddingTop={'1rem'}>
+              <Link href={'/'}>{t('Not forwarding? press here to back')}</Link>
             </Box>
           </Stack>
         </Stack>
@@ -205,7 +224,9 @@ export default function SelectFileToUpload() {
                           sx={{ fontSize: ['2rem', values['avatar'].length > 0 ? '2rem' : '3rem'] }}
                         >
                           <FolderOpenIcon sx={{ fontSize: '3rem' }} />
-                          <Typography>{t('Choose file to upload')}</Typography>
+                          <Typography variant="h1" fontSize={'1rem'}>
+                            {t('Choose file to upload')}
+                          </Typography>
                         </Stack>
                       </Button>
 
@@ -222,7 +243,7 @@ export default function SelectFileToUpload() {
                         {values['avatar'].length > 0 ? (
                           <>
                             <Typography variant={'caption'} sx={{ fontWeight: 'bold', textAlign: 'center' }}>
-                              {t('file list')}:
+                              {t('File list')}:
                             </Typography>
                             <Box sx={{ borderTop: '1px solid rgba(32,32,32,0.3)' }}></Box>
                           </>
@@ -241,8 +262,9 @@ export default function SelectFileToUpload() {
                                 paddingY={'1rem'}
                                 spacing={'1rem'}
                               >
-                                {/* 2 pick 1 */}
-
+                                <Box>
+                                  <AttachFileIcon />
+                                </Box>
                                 <Stack direction={'column'} spacing={'0.25rem'} sx={{ width: '200px' }}>
                                   <Typography color="primary" sx={{ wordBreak: 'break-all' }}>
                                     {f.name}

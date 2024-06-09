@@ -1,14 +1,16 @@
 import { Box, Button, Card, CardContent, Divider, IconButton, Stack, Typography } from '@mui/material';
 import { QRCodeSVG } from 'qrcode.react';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import Link from 'next/link';
+// import Link from 'next/link';
+import Link from '../../components/Link';
+
 import HelloworldSvg from './HelloWorld.svg';
 import Image from 'next/image';
 import CarousellLogoPng from './CarousellLogo.png';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ShareIcon from '@mui/icons-material/Share';
 import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
@@ -20,6 +22,8 @@ export default function UploadSuccessfulBody() {
   const theme = useTheme();
   const { t } = useTranslation();
   const router = useRouter();
+
+  const { locale } = router.query;
   const [dir_prefix, setDirPrefix] = useState('');
 
   const showTextCopyDone = () =>
@@ -102,9 +106,10 @@ export default function UploadSuccessfulBody() {
     if (temp) {
       setDirPrefix(temp);
     } else {
-      router.replace('/');
+      // TODO: resume me
+      // router.replace('/');
     }
-  });
+  }, []);
 
   if (typeof window !== 'object') return <>loading</>;
 
@@ -123,7 +128,7 @@ export default function UploadSuccessfulBody() {
             <Typography sx={{ fontSize: ['2rem', '2rem'] }}>{t('Upload success')} !</Typography>
             <Box width={['100px', '150px']}>
               <QRCodeSVG
-                value={`${window.location.origin}/get_files?dir_prefix=${dir_prefix}`}
+                value={`${window.location.origin}/${locale}/get_files/${dir_prefix}`}
                 width={'100%'}
                 height={'100%'}
                 fgColor={'rgb(65, 66, 68)'}
@@ -179,17 +184,15 @@ export default function UploadSuccessfulBody() {
               {t('you may want to')}:
             </Typography>
             <Stack direction={'column'} spacing={'0.5rem'}>
-              <Link href="/" replace>
-                <Button size="large" variant={'contained'}>
-                  <Stack direction={'row'} width="100%" spacing={'1rem'}>
-                    <ArrowBackIcon />
-                    <Box flexGrow={1}>{t('Back')}</Box>
-                  </Stack>
-                </Button>
-              </Link>
+              <Button size="large" variant={'contained'} href={`/${locale}`}>
+                <Stack direction={'row'} width="100%" spacing={'1rem'}>
+                  <ArrowBackIcon />
+                  <Box flexGrow={1}>{t('Back')}</Box>
+                </Stack>
+              </Button>
 
               <CopyToClipboard
-                text={`${window.location.origin}/get_files?dir_prefix=${dir_prefix}`}
+                text={`${window.location.origin}/${locale}/get_files/${dir_prefix}`}
                 onCopy={() => showLinkCopyDone()}
               >
                 <Button size="large" variant={'contained'}>
@@ -201,7 +204,7 @@ export default function UploadSuccessfulBody() {
               </CopyToClipboard>
 
               <CopyToClipboard
-                text={`ttps://${window.location.host}/get_files?dir_prefix=${dir_prefix}`}
+                text={`ttps://${window.location.host}/${locale}/get_files/${dir_prefix}`}
                 onCopy={() => showCarousellLinkCopyDone()}
               >
                 <Button
@@ -215,7 +218,7 @@ export default function UploadSuccessfulBody() {
                   }}
                 >
                   <Stack direction={'row'} width="100%" spacing={'1rem'}>
-                    <Image src={CarousellLogoPng.src} width="30px" height="30px" />
+                    <Image src={CarousellLogoPng.src} width="30" height="30" />
                     <Box flexGrow={1}>{t('Copy carousell link')}</Box>
                   </Stack>
                 </Button>
