@@ -13,6 +13,15 @@
 ![alt text](doc/screenshots/home_screen.png)
 ![alt text](doc/screenshots/home_screen_chi.png)
 
+### error reporting
+
+- sentry
+- logrocket
+
+### TODO:
+
+- [x] init commit
+
 ### dev (docker image)
 
 ```bash
