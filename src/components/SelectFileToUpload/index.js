@@ -29,6 +29,7 @@ import { useTheme } from '@emotion/react';
 import Link from 'next/link';
 
 import AttachFileIcon from '@mui/icons-material/AttachFile';
+import { setup } from 'lib/csrf';
 
 const toast_duration = 15 * 1000;
 

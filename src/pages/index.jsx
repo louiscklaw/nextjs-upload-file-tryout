@@ -85,10 +85,10 @@ const Homepage = _props => {
 };
 
 // or getServerSideProps: GetServerSideProps<Props> = async ({ locale })
-export const getStaticProps = async ({ locale }) => ({
+export const getServerSideProps = setup(async ({ locale }) => ({
   props: {
     ...(await serverSideTranslations(locale ?? 'en', ['common', 'footer'])),
   },
-});
+}));
 
 export default Homepage;
