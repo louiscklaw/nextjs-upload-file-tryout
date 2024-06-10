@@ -34,14 +34,11 @@ async function upload(req) {
 
     await sendMessage(`https://share.louislabs.com/en/get_files/${dir_prefix}`);
 
-    console.log('find me ?');
-
     return { status: 'ok', data: { fields, files, dir_prefix } };
   } catch (error) {
     console.error(error);
 
-    // FIXME: absolute url are supported
-    //   await discordSendErrorMessage(`api/files/upload.js, share.louislabs.com, some error found !`);
+    await discordSendErrorMessage(`api/files/upload.js, share.louislabs.com, some error found !`);
   }
 }
 
