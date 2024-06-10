@@ -19,15 +19,21 @@ var params = content => {
 };
 
 function sendMessage(content) {
-  return fetch(hook_url, {
-    method: 'POST',
-    headers: {
-      'Content-type': 'application/json',
-    },
-    body: JSON.stringify(params(content)),
-  }).then(res => {
-    console.log(res);
-  });
+  try {
+    if (hook_url == '') throw Error('hook url not found, please check .env.local file');
+
+    return fetch(hook_url, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(params(content)),
+    }).then(res => {
+      console.log(res);
+    });
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 function discordSendErrorMessage(content) {

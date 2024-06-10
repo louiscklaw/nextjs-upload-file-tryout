@@ -24,20 +24,20 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import RedoIcon from '@mui/icons-material/Redo';
 import { useTheme } from '@emotion/react';
-import Link from '../../components/Link';
+
+// import Link from '../../components/Link';
+import Link from 'next/link';
+
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 
 const toast_duration = 15 * 1000;
 
 export default function SelectFileToUpload() {
   const router = useRouter();
-  const { locale } = router.query;
 
   const { t } = useTranslation();
   const theme = useTheme();
   const [show_forwarding_page, setShowForwardingPage] = React.useState(false);
-
-  const COLOR_DANGER = theme.palette.danger;
 
   const [browser_window, setBrowserWindow] = React.useState();
 
@@ -88,7 +88,7 @@ export default function SelectFileToUpload() {
       formData.append('avatar', values.avatar[i]);
     }
 
-    fetch(`${window.location.origin}/api/files/upload/`, { method: 'POST', body: formData })
+    fetch(`/api/files/upload/`, { method: 'POST', body: formData })
       .then(response => response.json())
       .then(res_json => {
         if (res_json?.message) {
@@ -101,7 +101,7 @@ export default function SelectFileToUpload() {
 
           localStorage.setItem('dir_prefix', res_json['data']['dir_prefix']);
 
-          router.push(`/${locale}/upload_successful`);
+          router.push(`/upload_successful`);
         }
       })
       .catch(err => {
@@ -229,7 +229,6 @@ export default function SelectFileToUpload() {
                           </Typography>
                         </Stack>
                       </Button>
-
                       <Stack
                         direction={'column'}
                         spacing={'0.2rem'}
@@ -295,7 +294,6 @@ export default function SelectFileToUpload() {
                           );
                         })}
                       </Stack>
-
                       <Stack
                         direction={['row']}
                         sx={{ width: '100%' }}

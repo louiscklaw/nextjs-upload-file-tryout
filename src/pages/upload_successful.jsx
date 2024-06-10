@@ -1,20 +1,17 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from './Home.module.css';
-import SelectFileToUpload from '../../components/SelectFileToUpload';
+import { useTheme } from '@emotion/react';
+
+import { useTranslation, Trans } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
 import { Box, Stack, Typography } from '@mui/material';
-
-import { useTranslation } from 'next-i18next';
-import { getStaticPaths, makeStaticProps } from '../../lib/getStatic';
-
-import dynamic from 'next/dynamic';
-
-const UploadSuccessfulBody = dynamic(() => import('../../components/UploadSuccessfulBody'), { ssr: false });
-
+import UploadSuccessfulBody from 'components/UploadSuccessfulBody';
 import { useEffect } from 'react';
 
-export default function UploadSuccessful() {
-  const { t } = useTranslation(['common', 'footer']);
+const PageContent = () => {
+  const { t } = useTranslation('common');
+  const theme = useTheme();
 
   return (
     <>
@@ -23,16 +20,17 @@ export default function UploadSuccessful() {
       </Head>
 
       <Stack
-        minHeight={'90vh'}
-        width={'calc( 100vw - 20px )'}
+        minHeight={['90vh', '90vh']}
+        width={['100vw', 'calc( 100vw - 20px )']}
         direction={'column'}
         justifyContent={'center'}
         alignItems={'center'}
+        backgroundColor="unset"
       >
         <UploadSuccessfulBody />
       </Stack>
 
-      <Box height={'10vh'} width={'calc( 100vw - 20px )'}>
+      <Box height={['10vh', '10vh']} width={['100vw', 'calc( 100vw - 20px )']} backgroundColor="unset">
         <Stack
           direction={'column'}
           justifyContent={'center'}
@@ -64,7 +62,13 @@ export default function UploadSuccessful() {
       </Box>
     </>
   );
-}
+};
 
-const getStaticProps = makeStaticProps(['common', 'footer']);
-export { getStaticPaths, getStaticProps };
+// or getServerSideProps: GetServerSideProps<Props> = async ({ locale })
+export const getServerSideProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale ?? 'en', ['common', 'footer'])),
+  },
+});
+
+export default PageContent;
