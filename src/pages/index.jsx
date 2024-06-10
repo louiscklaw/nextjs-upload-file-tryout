@@ -82,15 +82,12 @@ const Homepage = _props => {
 
           <Stack direction={'row'} justifyContent={'center'} spacing={'1rem'}>
             <Stack direction={'row'} justifyContent={'center'}>
-              <Typography variant="caption" gutterBottom>
-                logrocket
-              </Typography>
-            </Stack>
-
-            <Stack direction={'row'} justifyContent={'center'}>
-              <Typography variant="caption" gutterBottom>
+              <Link
+                href="https://louiscklaw-github-io.sentry.io/issues/?project=4507283217514496"
+                style={{ fontSize: '0.7rem', textDecoration: 'underline', color: theme.palette.primary.main }}
+              >
                 sentry
-              </Typography>
+              </Link>
             </Stack>
           </Stack>
         </Stack>
