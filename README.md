@@ -1,5 +1,18 @@
 # nextjs-upload-file-tryout
 
+### screenshots
+
+### share file process
+
+![alt text](doc/screenshots/get_file.png)
+![alt text](doc/screenshots/select_file.png)
+![alt text](doc/screenshots/upload_success.png)
+
+#### multi-lingual support
+
+![alt text](doc/screenshots/home_screen.png)
+![alt text](doc/screenshots/home_screen_chi.png)
+
 ### dev (docker image)
 
 ```bash
