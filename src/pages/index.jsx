@@ -13,10 +13,27 @@ import { Footer } from '../components/Footer';
 import SelectFileToUpload from 'components/SelectFileToUpload';
 
 import { setup } from '../lib/csrf';
+import { useEffect } from 'react';
 
 const Homepage = _props => {
   const { t } = useTranslation('common');
   const theme = useTheme();
+  const router = useRouter();
+
+  useEffect(() => {
+    localStorage.setItem('i18nextLng', router.locale);
+
+    fetch(`/api/xsrf_check`)
+      .then(res => res.json())
+      .then(res_json => {
+        let { result } = res_json;
+        if (result == 'xsrf exist') {
+          console.log('token found');
+        } else {
+          router.replace(`/Init`);
+        }
+      });
+  }, []);
 
   return (
     <>
@@ -55,9 +72,7 @@ const Homepage = _props => {
           direction={'column'}
           justifyContent={'center'}
           alignItems={'center'}
-          sx={{
-            minHeight: ['none', 'calc( 100vh  - 90vh )'],
-          }}
+          sx={{ minHeight: ['none', 'calc( 100vh  - 90vh )'] }}
         >
           <Stack direction={'row'} justifyContent={'center'}>
             <Typography variant="caption" gutterBottom>
@@ -85,10 +100,10 @@ const Homepage = _props => {
 };
 
 // or getServerSideProps: GetServerSideProps<Props> = async ({ locale })
-export const getServerSideProps = setup(async ({ locale }) => ({
+export const getServerSideProps = async ({ locale }) => ({
   props: {
     ...(await serverSideTranslations(locale ?? 'en', ['common', 'footer'])),
   },
-}));
+});
 
 export default Homepage;
