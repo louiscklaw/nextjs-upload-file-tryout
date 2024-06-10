@@ -8,10 +8,13 @@ export const getI18nPaths = () =>
     },
   }));
 
-export const getStaticPaths = () => ({
-  fallback: false,
-  paths: getI18nPaths(),
-});
+export const getStaticPaths = () => {
+  console.log(getI18nPaths());
+  return {
+    fallback: false,
+    paths: getI18nPaths(),
+  };
+};
 
 export const getI18nProps = async (ctx, ns = ['common']) => {
   const locale = ctx?.params?.locale || i18nextConfig.i18n.defaultLocale;

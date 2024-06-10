@@ -1,13 +1,5 @@
 {
-  "back-to-home": "Back to home",
-  "error-with-status": "A {{statusCode}} error occurred on server",
-  "error-without-status": "An error occurred on the server",
-  "h1": "A simple example",
-  "title": "Home | next-i18next",
-  "zh_HK": "繁",
-  "zh_CN": "簡",
-  "en": "Eng",
-  "to-second-page": "To second page",
+  "File list": "文件列表",
   "File upload": "文件上传",
   "Max file size": "最大文件大小",
   "Clear": "清空",
@@ -23,10 +15,10 @@
   "send_share_code": "麻烦你，将下面这些字符发给Louis",
   "thanks": "谢谢",
   "Upload success": "上传成功",
-  "preparing ... ": "准备中，请稍等...",
+  "Preparing ...": "准备中，请稍等",
   "to download using mobile, scan below:": "如果想使用手机下载，扫描以下二维码",
-  "start download ... ": "开始下载...",
-  "download": "开始下载...",
+  "start download": "开始下载",
+  "download": "开始下载",
   "click to copy": "点击复制",
   "👍 copied !!": "✔️ 已复制！",
   "Carousell Link copied !!": "Carousell链接已复制！",
@@ -34,7 +26,30 @@
   "Get files": "获取文件...",
   "file list": "文件列表",
   "Sorry but uploading a file with the same name not supported": "很抱歉，不支持同名文件上传",
-  "english": "Eng",
-  "File list": "文件列表",
-  "Sorry but error found, call louis": "很抱歉，发现错误，call Louis"
+  "en": "En",
+  "zh-HK": "繁",
+  "zh-CN": "簡",
+  "h1": "A simple example",
+  "change-locale": "Change locale to \"{{changeTo}}\"",
+  "to-second-page": "To second page",
+  "error-with-status": "A {{statusCode}} error occurred on server",
+  "error-without-status": "An error occurred on the server",
+  "title": "Home | next-i18next",
+  "blog": {
+    "appDir": {
+      "question": "Are you using the new Next.js 13/14 app directory?",
+      "answer": "Then check out <1>this blog post</1>.",
+      "link": "https://locize.com/blog/next-app-dir-i18n/"
+    },
+    "optimized": {
+      "question": "Do you like to unleash some super powers to have all side optimized translations?",
+      "answer": "Then you may have a look at <1>this blog post</1>.",
+      "link": "https://locize.com/blog/next-i18next/"
+    },
+    "ssg": {
+      "question": "Do you want to use SSG (next export)?",
+      "answer": "Then you may have a look at <1>this blog post</1>.",
+      "link": "https://locize.com/blog/next-i18n-static/"
+    }
+  }
 }

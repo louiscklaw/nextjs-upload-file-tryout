@@ -1,32 +1,33 @@
+import Head from 'next/head';
+import Image from 'next/image';
 import { Box, Button, Card, CardContent, Divider, Stack, Typography } from '@mui/material';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
-import { useTranslation } from 'next-i18next';
-import Link from '../../../components/Link';
+import { useEffect, useState } from 'react';
 
-import dynamic from 'next/dynamic';
+import { useTranslation, Trans } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-const GenQr = dynamic(() => import('../../../components/GenQr'), { ssr: false });
+import { useTheme } from '@emotion/react';
+import { useRouter } from 'next/router';
+import GenQr from 'components/GenQr';
 
-export default () => {
-  const { t } = useTranslation();
-
+const PageContent = () => {
   const router = useRouter();
-  const { locale } = router.query;
   const { dir_prefix } = router.query;
 
+  const { t, i18n } = useTranslation('common');
+  const theme = useTheme();
   const [disable_download_button, setDisableDownloadButton] = useState(true);
   const [download, setDownload] = useState(t('Preparing ...'));
 
   const goDownload = () => {
     setDisableDownloadButton(true);
-    setDownload(t('preparing ... '));
+    setDownload(t('Preparing ...'));
 
     router.push(`/api/files/get?dir_prefix=${dir_prefix}`);
-    setDownload(t('start download ... '));
+    setDownload(t('start download'));
   };
 
   useEffect(() => {
@@ -79,11 +80,7 @@ export default () => {
               <Box
                 width="100%"
                 minHeight="100px"
-                sx={{
-                  display: 'flex',
-                  flexDirection: ['row', 'column'],
-                  gap: '1rem',
-                }}
+                sx={{ display: 'flex', flexDirection: ['row', 'column'], gap: ['0.1rem', '1rem'] }}
               >
                 <Box sx={{ width: ['50%', '100%'] }}>
                   <Box
@@ -95,7 +92,7 @@ export default () => {
                       alignItems: 'center',
                     }}
                   >
-                    <Button href={`/${locale}`} variant="outlined" sx={{ height: '100%', width: '90%' }} size={'large'}>
+                    <Button href={`/`} variant="outlined" sx={{ height: '100%', width: '90%' }} size={'large'}>
                       <Stack direction={['column', 'row']} spacing={'1rem'} alignItems={'center'}>
                         <ChevronLeftIcon />
                         {t('Back')}
@@ -138,13 +135,9 @@ export default () => {
           </CardContent>
         </Card>
       </Stack>
+
       <footer>
-        <Stack
-          direction={'column'}
-          justifyContent={'center'}
-          alignItems={'center'}
-          sx={{ minHeight: 'calc( 100vh - 10vh - 80vh )' }}
-        >
+        <Stack direction={'column'} justifyContent={'center'} alignItems={'center'} height={'10vh'}>
           <Stack direction={'row'} justifyContent={'center'}>
             <Typography variant="caption" gutterBottom>
               2024 louislabs.com
@@ -169,3 +162,12 @@ export default () => {
     </>
   );
 };
+
+// or getServerSideProps: GetServerSideProps<Props> = async ({ locale })
+export const getServerSideProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale ?? 'en', ['common', 'footer'])),
+  },
+});
+
+export default PageContent;

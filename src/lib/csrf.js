@@ -8,6 +8,7 @@ const { csrf, setup } = nextCsrf({
   // eslint-disable-next-line no-undef
   secret: csrf_token,
   httpOnly: true,
+  ignoredMethods: ['OPTIONS'],
 });
 
 export { csrf, setup };

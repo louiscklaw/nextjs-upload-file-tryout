@@ -1,13 +1,5 @@
 {
-  "back-to-home": "Back to home",
-  "error-with-status": "A {{statusCode}} error occurred on server",
-  "error-without-status": "An error occurred on the server",
-  "h1": "A simple example",
-  "title": "Home | next-i18next",
-  "zh_HK": "繁",
-  "zh_CN": "簡",
-  "en": "Eng",
-  "to-second-page": "To second page",
+  "File list": "檔案列表",
   "File upload": "檔案上傳",
   "Max file size": "最大檔案大小",
   "Clear": "清空",
@@ -23,10 +15,10 @@
   "send_share_code": "麻煩你，將下面呢幾隻字 send 番比 Louis",
   "thanks": "唔該先...",
   "Upload success": "上傳成功",
-  "preparing ... ": "準備緊，稍等 ...",
+  "Preparing ...": "準備緊，稍等",
   "to download using mobile, scan below:": "如果想用電話下載，掃以下 QR code",
-  "start download ... ": "開始下載 ...",
-  "download": "開始下載 ...",
+  "start download": "開始下載",
+  "download": "開始下載",
   "click to copy": "click 一下可以復製",
   "👍 copied !!": "👌 copy 咗 !!",
   "Carousell Link copied !!": "Carousell 嘅 Link copy 咗 !!",
@@ -34,8 +26,30 @@
   "Get files": "攞擋案...",
   "file list": "檔案列表",
   "Sorry but uploading a file with the same name not supported": "唔好意思，有相同 file 名 upload 唔到 ...",
-  "english": "English",
-  "zh_hk": "Traditional Chinese",
-  "File list": "檔案列表",
-  "Sorry but error found, call louis": "唔好意思，有錯誤發生，call Louis"
+  "en": "Eng",
+  "zh-HK": "繁",
+  "zh-CN": "簡",
+  "h1": "A simple example",
+  "change-locale": "Change locale to \"{{changeTo}}\"",
+  "to-second-page": "To second page",
+  "error-with-status": "A {{statusCode}} error occurred on server",
+  "error-without-status": "An error occurred on the server",
+  "title": "Home | next-i18next",
+  "blog": {
+    "appDir": {
+      "question": "Are you using the new Next.js 13/14 app directory?",
+      "answer": "Then check out <1>this blog post</1>.",
+      "link": "https://locize.com/blog/next-app-dir-i18n/"
+    },
+    "optimized": {
+      "question": "Do you like to unleash some super powers to have all side optimized translations?",
+      "answer": "Then you may have a look at <1>this blog post</1>.",
+      "link": "https://locize.com/blog/next-i18next/"
+    },
+    "ssg": {
+      "question": "Do you want to use SSG (next export)?",
+      "answer": "Then you may have a look at <1>this blog post</1>.",
+      "link": "https://locize.com/blog/next-i18n-static/"
+    }
+  }
 }

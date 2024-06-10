@@ -32,7 +32,7 @@ async function upload(req) {
       fs.writeFileSync(dest_path + files.avatar[i].originalFilename, bs);
     }
 
-    await sendMessage(`https://share.louislabs.com/en/get_files/${dir_prefix}`);
+    // await sendMessage(`https://share.louislabs.com/en/get_files/${dir_prefix}`);
 
     console.log('find me ?');
 
