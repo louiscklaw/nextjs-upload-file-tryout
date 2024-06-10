@@ -5,7 +5,7 @@ import secondpage from '../public/locales/en/second-page.json';
 const resources = {
   common,
   footer,
-  'second-page': secondpage
+  'second-page': secondpage,
 } as const;
 
 export default resources;

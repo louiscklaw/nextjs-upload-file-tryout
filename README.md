@@ -20,6 +20,7 @@ $ yarn dev
 ```
 
 ### build (application linux/windows)
+
 ```bash
 $ cd src
 $ yarn
