@@ -32,7 +32,7 @@ import ContentRef from '@site/src/components/ContentRef';
 ### 🐞 Fixes
 
 - We have resolved issues that could cause crashes when running multiple builds simultaneously, enhancing the overall stability and reliability of the build process. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
-- We have enhanced security for remote repository connections in the Build module.  <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- We have enhanced security for remote repository connections in the Build module. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where build logs were being saved prematurely due to a time synchronization problem, causing logs to be saved before the end of the process. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where API returned incorrect response code for requests with invalid commitId or buildId. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where the Admin Build Details section showed incorrect build status for cancelled builds. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
@@ -343,8 +343,8 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/config
 - Members in the same [organization](/account/my-organization) can take ownership of previously added build profiles. <CloudBadge/> <SelfHostedBadge/>
 - The user can now add a new PAT (Personal Access Token) via the [Connections](/build/manage-the-connections#managing-pat-connections) page without creating a new build profile. <CloudBadge/> <SelfHostedBadge/>
 - Enterprise customers can integrate their own authentication and OTP services and use them in conjunction with LDAP configuration on self-hosted installations. <SelfHostedBadge/>
-- The configuration file [global.yaml](../self-hosted-appcircle/install-server/docker#3-configure) now has a validator that helps users configure the settings correctly on export and prevents them from starting the server with broken settings. <SelfHostedBadge/>
-- The [certificate installer](../self-hosted-appcircle/install-server/docker#3-configure) tool now supports extracting proxy server certificates, which enable the runner to connect through a proxy without any SSL certificate error. <SelfHostedBadge/>
+- The configuration file [global.yaml](/self-hosted-appcircle/install-server/docker#3-configure) now has a validator that helps users configure the settings correctly on export and prevents them from starting the server with broken settings. <SelfHostedBadge/>
+- The [certificate installer](/self-hosted-appcircle/install-server/docker#3-configure) tool now supports extracting proxy server certificates, which enable the runner to connect through a proxy without any SSL certificate error. <SelfHostedBadge/>
 
 ### :muscle: Improvement
 

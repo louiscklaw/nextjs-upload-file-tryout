@@ -1,3 +1,11 @@
+# to update documenation on github page
+
+```bash
+> .\export.bat
+
+> .\gitUpdate.bat
+```
+
 # Documentation Guidelines
 
 Welcome to the Docusaurus documentation repository. When contributing documentation, please adhere to the following standards to ensure consistency and clarity.

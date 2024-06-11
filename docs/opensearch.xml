@@ -4,8 +4,8 @@
   <ShortName>Appcircle Docs</ShortName>
   <Description>Search Appcircle Docs</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://docs.appcircle.io/img/favicon.ico</Image>
-  <Url type="text/html" method="get" template="https://docs.appcircle.io/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://docs.appcircle.io/opensearch.xml" />
-  <moz:SearchForm>https://docs.appcircle.io/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://docs.appcircle.io/nextjs-upload-file-tryout/img/favicon.ico</Image>
+  <Url type="text/html" method="get" template="https://docs.appcircle.io/nextjs-upload-file-tryout/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://docs.appcircle.io/nextjs-upload-file-tryout/opensearch.xml" />
+  <moz:SearchForm>https://docs.appcircle.io/nextjs-upload-file-tryout/</moz:SearchForm>
 </OpenSearchDescription>
