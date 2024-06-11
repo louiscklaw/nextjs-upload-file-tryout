@@ -2,21 +2,22 @@
 
 services:
   upload_louislabs_com:
+    # build: .
     image: 192.168.10.61:5000/upload_louislabs_com
     ports:
       - '3033:3000'
     restart: unless-stopped
 
     # path to package.json
-    working_dir: /usr/bin/app/src
+    working_dir: /app/src
 
-    # command: sleep infinity
-    command: ./entry.sh
+    command: sleep infinity
+    # command: ./entry.sh
 
     volumes:
-      - ./volumes/.env.local:/usr/bin/app/src/.env.local
-      - ./volumes/upload_store:/usr/bin/app/upload_store
-      - ./volumes/zip_work_dir:/usr/bin/app/zip_work_dir
+      - ./volumes/.env.local:/app/src/.env.local
+      - ./volumes/upload_store:/app/upload_store
+      - ./volumes/zip_work_dir:/app/zip_work_dir
 
     # healthcheck:
     #   test: ['CMD', 'curl', '-f', 'http://localhost:3000/']
