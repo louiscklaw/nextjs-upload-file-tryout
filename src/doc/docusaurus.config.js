@@ -81,7 +81,7 @@ const config = {
             label: 'Documentation',
           },
           {
-            to: '/release-notes',
+            to: '/',
             position: 'left',
             label: 'Release Notes',
           },
@@ -132,24 +132,7 @@ const config = {
               {
                 label: 'Getting Started',
                 type: 'doc',
-                to: '/build/manage-the-connections/adding-a-build-profile',
-              },
-              {
-                label: 'Best Practices',
-                to: '/best-practices',
-              },
-              {
-                label: 'Integrations',
-                to: '/workflows',
-              },
-              {
-                label: 'Appcircle CLI',
-                to: '/appcircle-api',
-              },
-              {
-                label: 'Release Notes',
-                type: 'doc',
-                to: '/release-notes',
+                to: '/',
               },
             ],
           },
@@ -193,26 +176,6 @@ const config = {
               {
                 label: 'GitHub',
                 href: 'https://github.com/appcircleio/appcircle-docusaurus',
-              },
-              {
-                label: 'Blog',
-                href: 'https://appcircle.io/blog',
-              },
-              {
-                label: 'Features',
-                href: 'https://appcircle.io/features',
-              },
-              {
-                label: 'Contact Us',
-                href: 'https://appcircle.io/contact',
-              },
-              {
-                label: 'Privacy Policy',
-                href: 'https://appcircle.io/privacy-policy',
-              },
-              {
-                label: 'Terms of Service',
-                href: 'https://appcircle.io/terms-of-service',
               },
             ],
           },
