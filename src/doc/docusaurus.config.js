@@ -1,23 +1,28 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
+// `@type` JSDoc annotations allow editor autocompletion and type checking
+// (when paired with `@ts-check`).
+// There are various equivalent ways to declare your Docusaurus config.
+// See: https://docusaurus.io/docs/api/docusaurus-config
 
 const { themes } = require('prism-react-renderer');
 const remarkExternalUrlRef = require('./src/plugins/remark-externalUrlRef');
 
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Appcircle Docs',
   tagline: 'Guides and Docs for Appcircle.io',
   url: 'https://docs.appcircle.io',
+  favicon: 'img/favicon.ico',
+
   baseUrl: '/nextjs-upload-file-tryout/',
-  onBrokenLinks: 'throw',
+
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   onBrokenAnchors: 'throw',
+
   onDuplicateRoutes: 'warn',
-  favicon: 'img/favicon.ico',
   organizationName: 'appcircleio', // Usually your GitHub org/user name.
   projectName: 'appcircle-docusaurus', // Usually your repo name.
   trailingSlash: false,

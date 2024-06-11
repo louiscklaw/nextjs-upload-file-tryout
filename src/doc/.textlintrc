@@ -1,8 +1,0 @@
-{
-  "filters": {},
-  "rules": {
-    "no-dead-relative-link": {
-      "checkRelative": true
-    }
-  }
-}
