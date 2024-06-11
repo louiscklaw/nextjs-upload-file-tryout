@@ -1,5 +1,10 @@
 # nextjs-upload-file-tryout
 
+# README
+
+documentation url:
+[https://louiscklaw.github.io/nextjs-upload-file-tryout/](https://louiscklaw.github.io/nextjs-upload-file-tryout/)
+
 ### screenshots
 
 ### share file process
