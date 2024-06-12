@@ -1,3 +1,6 @@
+**/*.bak*
+**/*.del*
+
 upload_store
 zip_work_dir
 
