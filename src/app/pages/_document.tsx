@@ -13,6 +13,12 @@ class MyDocument extends Document<Props> {
       <Html lang={currentLocale}>
         <Head>
           <meta charSet="utf-8" />
+
+          <meta name="application-name" content="Next.js" />
+          <meta name="msapplication-TileColor" content="#000000" />
+          <meta name="theme-color" content="#000000" />
+          <link rel="manifest" href="/manifest.json" />
+
           <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet" />
           <link href="/app.css" rel="stylesheet" />
           <link href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css" rel="stylesheet" />

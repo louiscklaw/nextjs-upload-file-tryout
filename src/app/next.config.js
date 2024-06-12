@@ -1,3 +1,5 @@
+const withPWA = require('next-pwa');
+
 // @ts-check
 const { i18n } = require('./next-i18next.config.js');
 
@@ -17,7 +19,12 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = withPWA({
+  dest: 'public', // destination directory for the PWA files
+  disable: process.env.NODE_ENV === 'development', // disable PWA in the development environment
+  register: true, // register the PWA service worker
+  skipWaiting: true, // skip waiting for service worker activation
+})(nextConfig);
 
 // Injected content via Sentry wizard below
 

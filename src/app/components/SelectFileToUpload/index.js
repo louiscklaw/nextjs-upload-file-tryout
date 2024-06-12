@@ -5,7 +5,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { CardHeader, Stack } from '@mui/material';
+import { CardHeader, Input, Stack, TextField, TextareaAutosize } from '@mui/material';
 import Image from 'next/image';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -79,15 +79,18 @@ export default function SelectFileToUpload() {
     );
 
   const initialValues = {
-    avatar: [],
+    selectedFiles: [],
+    remarks: '',
   };
 
   const onSubmit = (values, helpers) => {
     const formData = new FormData();
 
-    for (var i = 0; i < values.avatar.length; i++) {
-      formData.append('avatar', values.avatar[i]);
+    for (var i = 0; i < values.selectedFiles.length; i++) {
+      formData.append('selectedFiles', values.selectedFiles[i]);
     }
+
+    formData.append('remarks', values['remarks']);
 
     fetch(`/api/files/upload/`, { method: 'POST', body: formData })
       .then(response => response.json())
@@ -150,12 +153,12 @@ export default function SelectFileToUpload() {
           <Form encType="multipart/form-data">
             <input
               type="file"
-              id="avatar"
-              name="avatar"
+              id="selectedFiles"
+              name="selectedFiles"
               multiple
               onChange={event => {
                 let input_files = event.target.files;
-                let form_file_list = values['avatar'].map(f => f.name);
+                let form_file_list = values['selectedFiles'].map(f => f.name);
                 let different_files_list = [];
 
                 let same_name_found = false;
@@ -171,7 +174,7 @@ export default function SelectFileToUpload() {
                   }
                 }
                 console.log({ different_files_list, input_files, form_file_list });
-                setFieldValue('avatar', [...values['avatar'], ...different_files_list]);
+                setFieldValue('selectedFiles', [...values['selectedFiles'], ...different_files_list]);
 
                 if (same_name_found) ErrSameFileNameNotify({ file_names: file_with_same_name_list });
                 event.target.value = '';
@@ -201,7 +204,7 @@ export default function SelectFileToUpload() {
                   >
                     <Stack
                       direction={['column']}
-                      width={['100%', '50%']}
+                      width={['100%', '250px']}
                       maxWidth={['300px']}
                       justifyContent="center"
                       alignItems={'center'}
@@ -212,9 +215,9 @@ export default function SelectFileToUpload() {
                         color="primary"
                         fullWidth
                         onClick={() => {
-                          document.querySelector('#avatar').click();
+                          document.querySelector('#selectedFiles').click();
                         }}
-                        sx={{ height: ['100px', values['avatar'].length > 0 ? 'unset' : '250px'] }}
+                        sx={{ height: ['100px', values['selectedFiles'].length > 0 ? 'unset' : '250px'] }}
                         disabled={props.isSubmitting}
                       >
                         <Stack
@@ -222,7 +225,7 @@ export default function SelectFileToUpload() {
                           alignItems={'center'}
                           spacing={'1rem'}
                           padding={'1rem'}
-                          sx={{ fontSize: ['2rem', values['avatar'].length > 0 ? '2rem' : '3rem'] }}
+                          sx={{ fontSize: ['2rem', values['selectedFiles'].length > 0 ? '2rem' : '3rem'] }}
                         >
                           <FolderOpenIcon sx={{ fontSize: '3rem' }} />
                           <Typography variant="h1" fontSize={'1rem'}>
@@ -235,12 +238,12 @@ export default function SelectFileToUpload() {
                         spacing={'0.2rem'}
                         sx={{
                           width: '100%',
-                          backgroundColor: values['avatar'].length > 0 ? 'rgba(128,128,128,0.1)' : 'unset',
+                          backgroundColor: values['selectedFiles'].length > 0 ? 'rgba(128,128,128,0.1)' : 'unset',
                           padding: '1rem',
                           borderRadius: '5px',
                         }}
                       >
-                        {values['avatar'].length > 0 ? (
+                        {values['selectedFiles'].length > 0 ? (
                           <>
                             <Typography variant={'caption'} sx={{ fontWeight: 'bold', textAlign: 'center' }}>
                               {t('File list')}:
@@ -251,7 +254,7 @@ export default function SelectFileToUpload() {
                           <></>
                         )}
 
-                        {values['avatar'].map((f, i) => {
+                        {values['selectedFiles'].map((f, i) => {
                           return (
                             <Box key={i}>
                               {i > 0 ? <Divider /> : <></>}
@@ -281,8 +284,8 @@ export default function SelectFileToUpload() {
                                     onClick={() => {
                                       console.log('click on ' + i);
                                       setFieldValue(
-                                        'avatar',
-                                        values['avatar'].filter((_, f_i) => f_i != i),
+                                        'selectedFiles',
+                                        values['selectedFiles'].filter((_, f_i) => f_i != i),
                                       );
                                     }}
                                     disabled={props.isSubmitting}
@@ -295,6 +298,20 @@ export default function SelectFileToUpload() {
                           );
                         })}
                       </Stack>
+
+                      <TextField
+                        label="Remarks"
+                        variant="outlined"
+                        placeholder="leave your remarks here..."
+                        onChange={e => (values['remarks'] = e.target.value)}
+                        size="small"
+                        sx={{ display: [values['selectedFiles'].length > 0 ? 'block' : 'none', 'none'] }}
+                        fullWidth
+                        rows={'3'}
+                        maxRows={'15'}
+                        multiline
+                      />
+
                       <Stack
                         direction={['row']}
                         sx={{ width: '100%' }}
@@ -307,7 +324,7 @@ export default function SelectFileToUpload() {
                           color={'secondary'}
                           fullWidth
                           startIcon={<HighlightOffIcon />}
-                          disabled={values['avatar'].length < 1 || props.isSubmitting}
+                          disabled={values['selectedFiles'].length < 1 || props.isSubmitting}
                         >
                           {t('cancel')}
                         </Button>
@@ -316,7 +333,7 @@ export default function SelectFileToUpload() {
                           variant="contained"
                           fullWidth
                           startIcon={<CloudUploadIcon />}
-                          disabled={values['avatar'].length < 1 || props.isSubmitting}
+                          disabled={values['selectedFiles'].length < 1 || props.isSubmitting}
                           color={'success'}
                         >
                           {t('upload')}
@@ -336,24 +353,53 @@ export default function SelectFileToUpload() {
                       ></Box>
                     </Box>
                     <Stack
-                      width={['50%']}
+                      width={['250px']}
                       maxWidth={['300px']}
                       spacing={'1rem'}
                       margin={'1rem'}
                       padding={'1rem'}
                       display={['none', 'flex']}
-                      justifyContent={values['avatar'].length > 0 ? 'center' : 'flex-start'}
                       alignItems={'center'}
                     >
-                      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                        {t('scan qr code')}
-                      </Typography>
-                      <Box sx={{ margin: '2rem', width: '12rem', height: '15rem' }}>
-                        <QRCodeSVG
-                          value={browser_window?.location.href}
-                          width={'100%'}
-                          height={'100%'}
-                          fgColor={'rgb(65, 66, 68)'}
+                      <Stack
+                        style={{
+                          display: values['selectedFiles'].length > 0 ? 'none' : 'block',
+                        }}
+                        direction={'column'}
+                        justifyContent={'center'}
+                        alignItems={'center'}
+                      >
+                        <Box>
+                          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                            {t('scan qr code and get this page using mobile')}
+                          </Typography>
+                        </Box>
+                        <Box>
+                          <QRCodeSVG
+                            value={browser_window?.location.href}
+                            width={'100%'}
+                            height={'100%'}
+                            fgColor={'rgb(65, 66, 68)'}
+                          />
+                        </Box>
+                      </Stack>
+
+                      <Box
+                        width={'250px'}
+                        sx={{
+                          display: ['none', values['selectedFiles'].length > 0 ? 'block' : 'none'],
+                        }}
+                      >
+                        <TextField
+                          label="Remarks"
+                          variant="outlined"
+                          placeholder="leave your remarks here..."
+                          onChange={e => (values['remarks'] = e.target.value)}
+                          size="small"
+                          rows={'10'}
+                          maxRows={'15'}
+                          multiline
+                          fullWidth
                         />
                       </Box>
                     </Stack>
