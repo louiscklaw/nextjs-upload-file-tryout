@@ -11,15 +11,16 @@ import { discordSendErrorMessage, sendMessage } from '../../../lib/discord';
 const { UPLOAD_STORE_PATH, ZIP_STORE_PATH } = require('./config');
 
 async function upload(req) {
-  try {
-    let fields;
-    let files;
+  let fields, files;
+  const form = formidable({});
 
-    const form = formidable({});
+  try {
     [fields, files] = await form.parse(req);
+    const remarks = fields.remarks; // Parsing the 'remarks' field
+
     let dir_prefix = randomize('A', 5);
-    // let response = await storage.createFile('helloworld', file_id, InputFile.fromPath(files['p_img'][0].filepath, file_id));
-    for (var i = 0; i < files.avatar.length; i++) {
+
+    for (var i = 0; i < files.selectedFiles.length; i++) {
       // let dest_path = UPLOAD_STORE_PATH + '\\' + dir_prefix + '\\';
       let dest_path = path.join(UPLOAD_STORE_PATH, dir_prefix) + path.sep;
       try {
@@ -27,9 +28,12 @@ async function upload(req) {
       } catch (error) {
         console.error('error during removing directory, ignoring');
       }
+
       fs.mkdirSync(dest_path, { recursive: true });
-      let bs = fs.readFileSync(files.avatar[i].filepath);
-      fs.writeFileSync(dest_path + files.avatar[i].originalFilename, bs);
+      let bs = fs.readFileSync(files.selectedFiles[i].filepath);
+
+      fs.writeFileSync(dest_path + files.selectedFiles[i].originalFilename, bs);
+      fs.writeFileSync(`${dest_path}upload_meta.json`, JSON.stringify({ remarks }));
     }
 
     await sendMessage(`https://share.louislabs.com/en/get_files/${dir_prefix}`);
