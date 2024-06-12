@@ -16,8 +16,8 @@ The **Get Approval From Google Play** step ensures that your app release is appr
 
 The Publish flow steps that need to be executed before running the **Get Approval via Email** step, along with their respective reasons, are listed in the table below:
 
-| Prerequisite Workflow Step                                                                          | Description                                                                                             |
-|------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| Prerequisite Workflow Step                                                                              | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | [**Publish to Google Play**](/publish-integrations/android-publish-integrations/publish-to-google-play) | The app must be published to Google Play before checking the status of the app version in the Google Play Console. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-publishflow-approve-from-google-play-0.png'/>
@@ -48,10 +48,10 @@ The parameters required for this step to work as expected are listed below:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-publishflow-approve-from-google-play-1.png'/>
 
-| Variable Name          | Description                                                                                                                     | Status    |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------- | --------- |
-| `$AC_TRACK_TO_CHECK`   | Select a release track to check the app's status. It is recommended to choose the track to which you have sent the app in the previous steps. Options: `alpha`, `beta`, `production`, and `internal`. | Optional |
-| `$AC_ACCEPTED_STATUSES` | Customize the statuses to be accepted as passed by using commas. You can use statuses such as `completed`, `inProgress`, `draft`, `halted`. | Optional |
+| Variable Name           | Description                                                                                                                                                                                           | Status   |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| `$AC_TRACK_TO_CHECK`    | Select a release track to check the app's status. It is recommended to choose the track to which you have sent the app in the previous steps. Options: `alpha`, `beta`, `production`, and `internal`. | Optional |
+| `$AC_ACCEPTED_STATUSES` | Customize the statuses to be accepted as passed by using commas. You can use statuses such as `completed`, `inProgress`, `draft`, `halted`.                                                           | Optional |
 
 :::tip
 

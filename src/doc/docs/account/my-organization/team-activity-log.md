@@ -1,16 +1,7 @@
 ---
 title: Team Activity Log
 description: Appcircle will notify external services via webhooks when a certain event occurs. When the events you specified happen, we'll send a POST request in JSON format to the URLs you provide.
-tags:
-  [
-    organizations,
-    sub organizations,
-    team activity log,
-    organization membership,
-    role management,
-    activity log,
-  ]
-
+tags: [organizations, sub organizations, team activity log, organization membership, role management, activity log]
 ---
 
 You can view team management actions such as creating, deleting, and adding members to Organizations or Sub Organizations in the Team Activity Log section within the My Organization area.

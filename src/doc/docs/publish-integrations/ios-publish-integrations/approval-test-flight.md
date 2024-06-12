@@ -50,7 +50,6 @@ The **App Information** feature within the **Get Approval from TestFlight** step
 
 Apple conducts the Missing Compliance check for all apps uploaded to TestFlight. Appcircle promptly displays a notification if your application lacks compliance. For detailed guidance on this compliance check, please refer to [this Apple Developer document](https://developer.apple.com/documentation/security/complying_with_encryption_export_regulations).
 
-
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3104-appInfo.png' />
 
 #### Test Information and Distribution to Tester
@@ -58,7 +57,6 @@ Apple conducts the Missing Compliance check for all apps uploaded to TestFlight.
 With this feature of Appcircle, you can see the test information of the version you send on **TestFligt** according to **different localizations**. At the same time, you can easily see your **internal and external** test groups and the number of testers they contain. With the toggle next to the test groups, you can send the related version to that test group and enable testers to receive notifications via TestFlight as runtime.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3104-testers.png' />
-
 
 To access the source code of this component, please use the following link:
 

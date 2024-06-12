@@ -14,8 +14,8 @@ The **Flutter Build for Android** step automates the generation of Android APK (
 
 Before running the **Flutter Build for Android** step, certain prerequisites must be completed. These prerequisites are detailed in the table below:
 
-| Prerequisite Workflow Step | Description                                                                                   |
-| -------------------------- | --------------------------------------------------------------------------------------------- |
+| Prerequisite Workflow Step                                   | Description                                                                                                                                          |
+| ------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**Git Clone**](/workflows/common-workflow-steps/#git-clone) | This step fetches the repository that needs to be built from the specified branch. It is essential for initiating the Flutter Android build process. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/flutter-workflow-components-build_1.png'/>
@@ -26,12 +26,12 @@ Each component requires specific input variables for its operation. The input va
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/flutter-workflow-components-build_2.png'/>
 
-| Variable Name                 | Description                                                                                           | Status    |
-|-------------------------------|-------------------------------------------------------------------------------------------------------|-----------|
-| `$AC_FLUTTER_PROJECT_DIR`     | Specifies the directory at the root of your Flutter project where the `pubspec.yaml` file is located. | Required  |
-| `$AC_OUTPUT_TYPE`             | Defines the output type, such as `APK` or `AAB` (Android App Bundle).                                 | Required  |
-| `$AC_FLUTTER_BUILD_MODE`      | Specifies the Flutter build mode. The default value is `release`.                                    | Optional  |
-| `$AC_FLUTTER_BUILD_EXTRA_ARGS`| Additional custom build arguments. For instance: `--split-per-abi`.                                   | Optional  |
+| Variable Name                  | Description                                                                                           | Status   |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------- | -------- |
+| `$AC_FLUTTER_PROJECT_DIR`      | Specifies the directory at the root of your Flutter project where the `pubspec.yaml` file is located. | Required |
+| `$AC_OUTPUT_TYPE`              | Defines the output type, such as `APK` or `AAB` (Android App Bundle).                                 | Required |
+| `$AC_FLUTTER_BUILD_MODE`       | Specifies the Flutter build mode. The default value is `release`.                                     | Optional |
+| `$AC_FLUTTER_BUILD_EXTRA_ARGS` | Additional custom build arguments. For instance: `--split-per-abi`.                                   | Optional |
 
 :::info
 
@@ -45,10 +45,10 @@ If the required variables are already defined in the **Configuration** section, 
 
 The outputs resulting from the operation of this component are as follows:
 
-| Output Variable           | Description                     |
-|---------------------------|---------------------------------|
-| `$AC_APK_PATH`            | Path of the generated APK file. |        
-| `$AC_AAB_PATH`            | Path of the generated AAB file. |
+| Output Variable | Description                     |
+| --------------- | ------------------------------- |
+| `$AC_APK_PATH`  | Path of the generated APK file. |
+| `$AC_AAB_PATH`  | Path of the generated AAB file. |
 
 :::info
 

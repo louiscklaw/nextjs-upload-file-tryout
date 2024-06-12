@@ -1,16 +1,7 @@
 ---
 title: API Integrations
 description: Connect your Appcircle account with various app store accounts for seamless application publishing and management.
-tags:
-  [
-    account,
-    organization,
-    api,
-    integrations,
-    app store connect,
-    google play,
-    huawei appgallery,
-  ]
+tags: [account, organization, api, integrations, app store connect, google play, huawei appgallery]
 ---
 
 # API Integration

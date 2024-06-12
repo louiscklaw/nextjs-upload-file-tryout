@@ -454,7 +454,7 @@ If your external service has **Subordinate CA** (sub CA) in certificate chain, i
 ```yaml
 external:
   scheme: https
-  mainDomain: ".appcircle.spacetech.com"
+  mainDomain: '.appcircle.spacetech.com'
   ca: |
     -----BEGIN CERTIFICATE-----
     MIIEvTCCAyWgAwIBAgIQNVqUQw+7fmeXJBAtns5HyjANBgkqhkiG9w0BAQsFADB3

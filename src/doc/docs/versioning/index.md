@@ -1,12 +1,10 @@
 ---
-title: Versioning
+title: Versioning 版本控制
 description: Understand and manage versioning for Android and iOS applications
 tags: [versioning, android, ios]
 ---
 
 import ContentRef from '@site/src/components/ContentRef';
-
-# Versioning
 
 Proper versioning is crucial for maintaining and updating mobile applications effectively. It helps in tracking different versions of your app, managing updates, and ensuring compatibility.
 

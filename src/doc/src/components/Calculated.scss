@@ -1,14 +1,13 @@
 .Calculated {
-    
-    label {
-        color: #5b799e;
-    }
-    span{
-        color: var(--ifm-color-primary);
-        font-weight: 600;
-    }
+  label {
+    color: #5b799e;
+  }
+  span {
+    color: var(--ifm-color-primary);
+    font-weight: 600;
+  }
 }
 
-html[data-theme="dark"] .Calculated label {
-    color: #96a0ac;
-  }
+html[data-theme='dark'] .Calculated label {
+  color: #96a0ac;
+}

@@ -217,7 +217,7 @@ For example, if you already have the `keycloak` key in global.yaml, you must jus
 
 ```yaml
 external:
-  mainDomain: ".spacetech.com"
+  mainDomain: '.spacetech.com'
 ```
 
 :::caution

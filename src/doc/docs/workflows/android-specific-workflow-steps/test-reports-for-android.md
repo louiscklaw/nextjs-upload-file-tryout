@@ -23,12 +23,11 @@ For additional details, please refer to the document: [**Generating Test Report*
 
 Before executing the **Test Report** workflow step, certain prerequisite workflow steps must be completed:
 
-| Prerequisite Workflow Step                                   | Description                                                                   |
-| ------------------------------------------------------------ | ----------------------------------------------------------------------------- |
+| Prerequisite Workflow Step                                                              | Description                                                  |
+| --------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
 | [**Android Unit Tests**](/workflows/android-specific-workflow-steps/android-unit-tests) | This step must be executed to obtain the test report output. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-test-report_1.png'/>
-
 
 ### Input Variables
 
@@ -36,20 +35,19 @@ For each component, specific input variables are required for its operation on y
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-test-report_2.png'/>
 
-| Variable Name            | Description                                                      | Status    |
-| ------------------------ | ---------------------------------------------------------------- | --------- |
-| `AC_TEST_RESULT_PATH`    | Specifies the directory and its subdirectories where compatible test files will be searched. | Required  |
-| `AC_COVERAGE_RESULT_PATH`| Specifies the coverage path. | Optional  |
-| `AC_JACOCO_COVERAGE_TYPE`| Determines the parameter in your JaCoCo report based on which the coverage will be calculated. This setting is necessary when using JaCoCo parseable coverage results and specifying the coverage result path. Types description can be found in this [documentation](/continuous-testing/android-testing/running-android-unit-tests#jacoco-test-coverage) | Required  |
-
+| Variable Name             | Description                                                                                                                                                                                                                                                                                                                                                | Status   |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| `AC_TEST_RESULT_PATH`     | Specifies the directory and its subdirectories where compatible test files will be searched.                                                                                                                                                                                                                                                               | Required |
+| `AC_COVERAGE_RESULT_PATH` | Specifies the coverage path.                                                                                                                                                                                                                                                                                                                               | Optional |
+| `AC_JACOCO_COVERAGE_TYPE` | Determines the parameter in your JaCoCo report based on which the coverage will be calculated. This setting is necessary when using JaCoCo parseable coverage results and specifying the coverage result path. Types description can be found in this [documentation](/continuous-testing/android-testing/running-android-unit-tests#jacoco-test-coverage) | Required |
 
 ### Output Variables
 
 The outputs resulting from the operation of this component are as follows:
 
-| Variable Name              | Description                                          |
-| -------------------------- | ---------------------------------------------------- |
-| `AC_TEST_REPORT_JSON_PATH` | Specifies the path of the JSON report.               |
+| Variable Name              | Description                            |
+| -------------------------- | -------------------------------------- |
+| `AC_TEST_REPORT_JSON_PATH` | Specifies the path of the JSON report. |
 
 ---
 

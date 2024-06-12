@@ -138,10 +138,10 @@ These methods range from the most detailed coverage percentage to the most gener
 - **LINE**: For all class files that have been compiled with debug information, coverage information for individual lines can be calculated.
 - **METHOD**: JaCoCo considers a method as executed when at least one instruction has been executed. Since JaCoCo works at the bytecode level, it counts constructors and static initializers as methods.
 - **CLASS**: JaCoCo considers a class as executed when at least one of its methods has been executed. JaCoCo counts constructors and static initializers as methods.
-:::
+  :::
 
 :::danger
-Each calculation type has different coverage percentages. This is because each type has its own level of detail. Therefore, the coverage percentages are different for each one. 
+Each calculation type has different coverage percentages. This is because each type has its own level of detail. Therefore, the coverage percentages are different for each one.
 :::
 
 ## Showing Test Reports

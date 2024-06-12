@@ -14,7 +14,6 @@ The **Android Increment Build and Version Number** step is managed with **Androi
 
 - [**Understanding Android Versioning**](/versioning/android-version)
 
-
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-android-build-version-increment-component.git

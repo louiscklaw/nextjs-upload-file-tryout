@@ -4,7 +4,6 @@ description: Distribute your in-house applications to your users with the Enterp
 tags: [enterprise app store, in-house distribution, enterprise distribution]
 ---
 
-
 # Enterprise App Store
 
 If you want to distribute your in-house applications to your users, you can use the **Enterprise App Store**.

@@ -1,15 +1,7 @@
 ---
 title: Cloud Providers
 description: Integrate Amazon Web Services (AWS) with Appcircle for scalable infrastructure and cloud resource access. Enhance your app building and testing capabilities.
-tags:
-  [
-    cloud providers,
-    Amazon Web Services,
-    AWS,
-    cloud computing,
-    build infrastructure,
-    cloud resources,
-  ]
+tags: [cloud providers, Amazon Web Services, AWS, cloud computing, build infrastructure, cloud resources]
 ---
 
 # Cloud Providers

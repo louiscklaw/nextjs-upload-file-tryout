@@ -13,9 +13,9 @@ By this way, you can build and test your apps on your choice of architectures. Y
 
 When we look at self-hosted Appcircle deployment as a whole, we will see below architecture in execution.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/self-hosted_appcircle_v8.drawio.png' />
+<Screenshot url='./img/posts/self-hosted_appcircle_v8.drawio.png' />
 
-To see the topology diagram in greater detail, click [here](https://cdn.appcircle.io/docs/assets/self-hosted_appcircle_v8.drawio.png). It will open the diagram in new browser tab.
+To see the topology diagram in greater detail, click [here](./img/posts/self-hosted_appcircle_v8.drawio.png). It will open the diagram in new browser tab.
 
 :::tip
 You can see all external network access details on the [Network Access](/self-hosted-appcircle/configure-server/integrations-and-access/network-access) page.

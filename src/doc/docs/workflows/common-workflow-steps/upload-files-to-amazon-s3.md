@@ -28,14 +28,14 @@ Below is a table containing all the parameters required for the **Upload Files t
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/s3-workflow-details.png' />
 
-| Variable Name           | Description                                      | Status    |
-|-------------------------|--------------------------------------------------|-----------|
-| `$AC_INPUT_FILE_PATH`   | Specifies the file or folder name to be uploaded to S3. You can provide the full path or the output of another step as an environment variable (e.g., `$AC_ARCHIVE_PATH` allows you to upload the output of the **Xcode Build for Devices** step). | Required  |
-| `$AWS_ACCESS_KEY_ID`    | Specifies the AWS access key ID. [For more information, refer here](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys). | Required  |
-| `$AWS_SECRET_ACCESS_KEY`| Specifies the secret access key associated with the entered ID. [For more information, refer here](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys). | Required  |
-| `$AWS_BUCKET_NAME`      | Specifies the S3 bucket name as the deployment target. | Required  |
-| `$AWS_BUCKET_REGION`    | Specifies the AWS region where the specified bucket resides. You can find the [endpoint codes for the regions here](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints). The default value is `us-east-1`. | Optional  |
-| `$AWS_TARGET_DIR`       | Specifies the Amazon S3 folder path in the bucket. By default, it selects the date (`Y-m-d-H-M-S`) as the folder. | Optional  |
+| Variable Name            | Description                                                                                                                                                                                                                                        | Status   |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| `$AC_INPUT_FILE_PATH`    | Specifies the file or folder name to be uploaded to S3. You can provide the full path or the output of another step as an environment variable (e.g., `$AC_ARCHIVE_PATH` allows you to upload the output of the **Xcode Build for Devices** step). | Required |
+| `$AWS_ACCESS_KEY_ID`     | Specifies the AWS access key ID. [For more information, refer here](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys).                                                                     | Required |
+| `$AWS_SECRET_ACCESS_KEY` | Specifies the secret access key associated with the entered ID. [For more information, refer here](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys).                                      | Required |
+| `$AWS_BUCKET_NAME`       | Specifies the S3 bucket name as the deployment target.                                                                                                                                                                                             | Required |
+| `$AWS_BUCKET_REGION`     | Specifies the AWS region where the specified bucket resides. You can find the [endpoint codes for the regions here](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints). The default value is `us-east-1`.                | Optional |
+| `$AWS_TARGET_DIR`        | Specifies the Amazon S3 folder path in the bucket. By default, it selects the date (`Y-m-d-H-M-S`) as the folder.                                                                                                                                  | Optional |
 
 :::info
 
@@ -47,9 +47,9 @@ It is highly recommended to add the keys as [secret environment variables](../..
 
 As the output may vary depending on the task you execute, there is no specific output defined by default.
 
-| Output Variable         | Description                                                    |
-|-------------------------|----------------------------------------------------------------|
-| `$AC_AWS_UPLOAD_URL`    | Specifies that the files and folders are deployed to a newly created directory as `s3://bucket-name/timestamp` to avoid any conflicts and potential overwrites. |
+| Output Variable      | Description                                                                                                                                                     |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `$AC_AWS_UPLOAD_URL` | Specifies that the files and folders are deployed to a newly created directory as `s3://bucket-name/timestamp` to avoid any conflicts and potential overwrites. |
 
 After saving your settings, the build can be run, and the step will be executed accordingly. Details of the upload operation can be viewed in the build logs:
 

@@ -1,14 +1,7 @@
 ---
 title: Slack Integration
 description: Enhance team collaboration and stay updated with Slack notifications and Appcircle bot for Slack.
-tags:
-  [
-    slack,
-    slack integration,
-    slack notifications,
-    appcircle bot,
-    appcircle bot for slack,
-  ]
+tags: [slack, slack integration, slack notifications, appcircle bot, appcircle bot for slack]
 sidebar_position: 2
 ---
 

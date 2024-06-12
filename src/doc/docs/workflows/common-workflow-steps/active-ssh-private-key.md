@@ -26,13 +26,12 @@ Below are the parameters required for this step, along with detailed explanation
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3151-sshInput.png' />
 
-| Variable Name                 | Description                                    | Status           |
-|-------------------------------|------------------------------------------------|------------------|
-| `$AC_REPOSITORY_SSH_KEY`      | SSH private key in RSA format. This value defaults to `AC_REPOSITORY_SSH_KEY`. It is automatically defined as the [**Reserved Environment Variables**](/environment-variables/appcircle-specific-environment-variables) when an SSH connection is made. | Optional |
-
+| Variable Name            | Description                                                                                                                                                                                                                                             | Status   |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| `$AC_REPOSITORY_SSH_KEY` | SSH private key in RSA format. This value defaults to `AC_REPOSITORY_SSH_KEY`. It is automatically defined as the [**Reserved Environment Variables**](/environment-variables/appcircle-specific-environment-variables) when an SSH connection is made. | Optional |
 
 ### Output Variables
 
-| Variable Name                 | Description                                    |
-|-------------------------------|------------------------------------------------|
-| `$SSH_AUTH_SOCK`              | This is the path to the SSH Auth Socket.       | 
+| Variable Name    | Description                              |
+| ---------------- | ---------------------------------------- |
+| `$SSH_AUTH_SOCK` | This is the path to the SSH Auth Socket. |

@@ -1,13 +1,7 @@
 ---
-title: "Platform-Specific Guidance: Android"
+title: 'Platform-Specific Guidance: Android'
 description: Learn how to distribute your Android mobile applications for testing and production. Follow the platform-specific guides to ensure a smooth testing process and successful deployment.
-tags:
-  [
-    Android testing,
-    Android distribution,
-    Android app deployment,
-    Android app distribution,
-  ]
+tags: [Android testing, Android distribution, Android app deployment, Android app distribution]
 ---
 
 # Platform-Specific Guidance: Android

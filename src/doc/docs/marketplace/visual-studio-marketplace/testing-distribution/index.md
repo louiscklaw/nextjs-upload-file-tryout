@@ -2,13 +2,7 @@
 title: Setting Up Appcircle Distribute Task in Azure DevOps Pipeline
 sidebar_label: Testing Distribution
 description: Overview of self-hosted Appcircle and related concepts
-tags:
-  [
-    testing-distribution,
-    ipa distribution,
-    apk distribution,
-    binary distribution,
-  ]
+tags: [testing-distribution, ipa distribution, apk distribution, binary distribution]
 sidebar_position: 1
 ---
 
@@ -40,10 +34,10 @@ After filling out the required fields, the `AppcircleEnterpriseStore@0` task wil
 ```yaml
 - task: AppcircleDistribute@0
   inputs:
-    accessToken: "APPCIRCLE_ACCESS_TOKEN" # Your Appcircle Access Token
-    profileId: "APPCIRCLE_PROFILE_ID" # ID of your Appcircle Distribution Profile
-    appPath: "BUILD_PATH" # Path to your iOS .ipa or .xcarchive, or Android APK or App Bundle
-    message: "Sample Message" # Custom message for your testers
+    accessToken: 'APPCIRCLE_ACCESS_TOKEN' # Your Appcircle Access Token
+    profileId: 'APPCIRCLE_PROFILE_ID' # ID of your Appcircle Distribution Profile
+    appPath: 'BUILD_PATH' # Path to your iOS .ipa or .xcarchive, or Android APK or App Bundle
+    message: 'Sample Message' # Custom message for your testers
 ```
 
 ### Discover Extension

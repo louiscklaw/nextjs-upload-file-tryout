@@ -95,6 +95,7 @@ If you have a self-hosted Appcircle server in AWS, it's better to deploy the sel
 This approach will reduce the latency between two machines.
 
 :::
+
 #### Check and Request the Dedicated Mac Instance Quota
 
 Before creating the dedicated host instance, you should check the dedicated service quota.
@@ -142,9 +143,7 @@ You must select one of the **`mac2`**, **`mac2-m2`** or **`mac2-m2pro`** instanc
 In the AWS [documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-mac-instances.html), you can find the underlying infrastructure listed below.
 
 > - EC2 M1 Mac instances (mac2.metal) are built on 2020 Mac mini hardware powered by Apple silicon M1 processors.
->
 > - EC2 M2 Mac instances (mac2-m2.metal) are built on 2023 Mac mini hardware powered by Apple silicon M2 processors.
->
 > - EC2 M2 Pro Mac instances (mac2-m2pro.metal) are built on 2023 Mac mini hardware powered by Apple silicon M2 Pro processors.
 
 :::

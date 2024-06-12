@@ -16,9 +16,9 @@ You can seamlessly integrate Tuist into your workflow with Appcircle, making set
 
 Before you run the **Tuist** step, you must complete certain prerequisites, as detailed in the table below:
 
-| Prerequisite Workflow Step                      | Description                                     |
-|-------------------------------------------------|-------------------------------------------------|
-| [Git Clone](/workflows/common-workflow-steps/git-clone) | You need to clone the repository to start the Tuist process. After cloning, the system installs Tuist and creates the `AC_REPOSITORY_DIR` variable.  |
+| Prerequisite Workflow Step                              | Description                                                                                                                                         |
+| ------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Git Clone](/workflows/common-workflow-steps/git-clone) | You need to clone the repository to start the Tuist process. After cloning, the system installs Tuist and creates the `AC_REPOSITORY_DIR` variable. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2829-tuistOrder.png' />
 
@@ -26,14 +26,12 @@ Before you run the **Tuist** step, you must complete certain prerequisites, as d
 
 You can find all the parameters required for this step in the table below, with their descriptions in detail.
 
-
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2829-tuistInput.png' />
 
-| Variable Name                            | Description                         | Status           |
-|-------------------------------|------------------------------------------------|------------------|
-| `$AC_TUIST_PATH`              | Specifies the path to the directory containing the project definition. This path is automatically generated after the [Git Clone](/workflows/common-workflow-steps/git-clone) step.  | Optional |
-| `$AC_TUIST_PROJECT_ONLY`      | Generates only the local project, without generating its dependencies. | Optional |
-
+| Variable Name            | Description                                                                                                                                                                         | Status   |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| `$AC_TUIST_PATH`         | Specifies the path to the directory containing the project definition. This path is automatically generated after the [Git Clone](/workflows/common-workflow-steps/git-clone) step. | Optional |
+| `$AC_TUIST_PROJECT_ONLY` | Generates only the local project, without generating its dependencies.                                                                                                              | Optional |
 
 To access the source code of this component, please use the following link:
 

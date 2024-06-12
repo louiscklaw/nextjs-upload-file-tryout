@@ -1,64 +1,63 @@
-import React, { useState, useEffect } from "react";
-import ToggleCircle from "./AppCircleComponent/ToggleCircle";
-import TextInputCircle from "./AppCircleComponent/TextInputCircle";
-import SelectCircle from "./AppCircleComponent/SelectCircle";
-import "./Calculated.scss";
+import React, { useState, useEffect } from 'react';
+import ToggleCircle from './AppCircleComponent/ToggleCircle';
+import TextInputCircle from './AppCircleComponent/TextInputCircle';
+import SelectCircle from './AppCircleComponent/SelectCircle';
+import './Calculated.scss';
 
 export default function VersionPlayground(props) {
-  const [buildNumber, setBuildNumber] = useState("5");
-  const [versionNumber, setVersionNumber] = useState("1.2.3");
-  const [buildOffset, setBuildOffset] = useState("1");
-  const [versionOffset, setVersionOffset] = useState("0");
-  const [newBuildNumber, setNewBuildNumber] = useState("5");
-  const [newVersionNumber, setNewVersionNumber] = useState("1.2.3");
+  const [buildNumber, setBuildNumber] = useState('5');
+  const [versionNumber, setVersionNumber] = useState('1.2.3');
+  const [buildOffset, setBuildOffset] = useState('1');
+  const [versionOffset, setVersionOffset] = useState('0');
+  const [newBuildNumber, setNewBuildNumber] = useState('5');
+  const [newVersionNumber, setNewVersionNumber] = useState('1.2.3');
 
   const [omitZero, setOmitZero] = useState(false);
-  const [versionStrategy, setVersionStrategy] = useState("keep");
+  const [versionStrategy, setVersionStrategy] = useState('keep');
 
   const [toggleCheckedBuild, setToggleCheckedBuild] = useState(false);
   const [toggleCheckedVersion, setToggleCheckedVersion] = useState(false);
-  const {title, subtitle} = props;
+  const { title, subtitle } = props;
 
   const versionStrategies = [
-    { label: "Keep", value: "keep" },
-    { label: "Major", value: "major" },
-    { label: "Minor", value: "minor" },
-    { label: "Patch", value: "patch" },
+    { label: 'Keep', value: 'keep' },
+    { label: 'Major', value: 'major' },
+    { label: 'Minor', value: 'minor' },
+    { label: 'Patch', value: 'patch' },
   ];
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     setToggleCheckedBuild(e.target.checked);
   };
-  const handleChangeVersion = (e) => {
+  const handleChangeVersion = e => {
     setToggleCheckedVersion(e.target.checked);
   };
 
-  const handleBuildNumber = (e) => {
+  const handleBuildNumber = e => {
     setBuildNumber(e.target.value);
   };
 
-  const handleVersionNumber = (e) => {
+  const handleVersionNumber = e => {
     setVersionNumber(e.target.value);
   };
 
   const calculateBuildNumber = () => {
-    const calculated =
-      (parseInt(buildOffset) || 0) + (parseInt(buildNumber) || 0);
+    const calculated = (parseInt(buildOffset) || 0) + (parseInt(buildNumber) || 0);
     setNewBuildNumber(calculated);
   };
 
   const calculateVersionNumber = () => {
-    const version_array = versionNumber.split(".").map(Number);
+    const version_array = versionNumber.split('.').map(Number);
     const offset = parseInt(versionOffset) || 0;
     switch (versionStrategy) {
-      case "patch":
+      case 'patch':
         version_array[2] = (version_array[2] || 0) + offset;
         break;
-      case "minor":
+      case 'minor':
         version_array[1] = (version_array[1] || 0) + offset;
         version_array[2] = version_array[2] = 0;
         break;
-      case "major":
+      case 'major':
         version_array[0] = (version_array[0] || 0) + offset;
         version_array[1] = version_array[1] = 0;
         version_array[1] = version_array[2] = 0;
@@ -70,7 +69,7 @@ export default function VersionPlayground(props) {
     if (omitZero && version_array[2] == 0) {
       version_array.pop();
     }
-    setNewVersionNumber(version_array.join("."));
+    setNewVersionNumber(version_array.join('.'));
   };
 
   useEffect(() => {
@@ -112,11 +111,11 @@ export default function VersionPlayground(props) {
       {toggleCheckedBuild && (
         <>
           <TextInputCircle
-            title={title + " Offset"}
+            title={title + ' Offset'}
             // bottom text is not visible if bottomText is false
             bottomText={false}
             value={buildOffset}
-            onChange={(e) => setBuildOffset(e.target.value)}
+            onChange={e => setBuildOffset(e.target.value)}
           />
           <div className="Calculated">
             <label>
@@ -138,10 +137,10 @@ export default function VersionPlayground(props) {
         <>
           <TextInputCircle
             // bottom text is not visible if bottomText is false
-            title={subtitle + " Offset"}
+            title={subtitle + ' Offset'}
             bottomText={false}
             value={versionOffset}
-            onChange={(e) => setVersionOffset(e.target.value)}
+            onChange={e => setVersionOffset(e.target.value)}
           />
           <SelectCircle
             // bottom text is not visible if bottomText is false
@@ -156,7 +155,7 @@ export default function VersionPlayground(props) {
             toggleDesc="If true omits zero in patch version(so 42.10.0 will become 42.10 and 42.10.1 will remain 42.10.1), default is false"
             checked={omitZero}
             disabled={false}
-            onChange={(e) => setOmitZero(e.target.checked)}
+            onChange={e => setOmitZero(e.target.checked)}
             offstyle="#a5b5c9"
             onstyle="var(--ifm-color-primary)"
           />

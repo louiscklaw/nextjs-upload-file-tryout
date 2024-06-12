@@ -1,7 +1,16 @@
 ---
 title: External Image Registries
 description: Learn how to configure external image registries in Appcircle
-tags: [self-hosted, external image registry, registry, sonatype nexus, mirror images, insecure registry, pull images one by one]
+tags:
+  [
+    self-hosted,
+    external image registry,
+    registry,
+    sonatype nexus,
+    mirror images,
+    insecure registry,
+    pull images one by one,
+  ]
 sidebar_position: 13
 ---
 

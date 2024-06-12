@@ -27,22 +27,21 @@ smtpServer:
   ssl: 'false'
   auth: 'true'
   starttls: 'true'
-
 ```
 
 Explanation of each key
 
-|Key|Explanation|
-|---|-----------|
-|password|Password of the SMTP server|
-|username|Default user name for SMTP.|
-|from|Sender address of the emails |
-|host|The SMTP server to connect to|
-|fromDisplayName |Sender Display Name|
-|port |The SMTP server port to connect|
-|ssl | If set to true, use SSL to connect |
-|auth | If set to true, attempt to authenticate the user using the AUTH command. |
-|starttls | If set to true, enables the use of the STARTTLS command |
+| Key             | Explanation                                                              |
+| --------------- | ------------------------------------------------------------------------ |
+| password        | Password of the SMTP server                                              |
+| username        | Default user name for SMTP.                                              |
+| from            | Sender address of the emails                                             |
+| host            | The SMTP server to connect to                                            |
+| fromDisplayName | Sender Display Name                                                      |
+| port            | The SMTP server port to connect                                          |
+| ssl             | If set to true, use SSL to connect                                       |
+| auth            | If set to true, attempt to authenticate the user using the AUTH command. |
+| starttls        | If set to true, enables the use of the STARTTLS command                  |
 
 ## SSO
 

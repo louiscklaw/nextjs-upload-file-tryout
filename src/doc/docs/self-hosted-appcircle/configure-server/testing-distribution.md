@@ -33,7 +33,7 @@ Be aware that this will cause a downtime on the Appcircle server.
 
 - Locate the image file on the Appcircle server and find out the full path of the logo file.
 
-For example, assume that your logo file is `spacetech-logo.svg`, and it is in the current working directory. 
+For example, assume that your logo file is `spacetech-logo.svg`, and it is in the current working directory.
 
 You should run the `realpath` command to get absolute path of the file as below.
 

@@ -10,11 +10,9 @@ import Screenshot from '@site/src/components/Screenshot';
 
 Learn to streamline your workflows by pushing data to cache with our easy-to-follow cache-push tutorial. Ideal for improving build performance.
 
-
 # Cache Pull
 
 Discover the essentials of cache retrieval in our cache-pull guide. Speed up your build processes by mastering the art of efficiently pulling cached data.
-
 
 # How to Share Files Between Build Profiles
 

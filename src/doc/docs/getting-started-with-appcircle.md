@@ -1,5 +1,5 @@
 ---
-title: Getting Started With Appcircle
+title: 快速開始 Getting Started
 description: Appcircle is a mobile CI/CD platform which makes it easy for you to manage the lifecycle of your mobile applications.
 tags: [getting started, mobile, ci/cd, platform]
 sidebar_position: 2
@@ -7,7 +7,7 @@ sidebar_position: 2
 
 import ContentRef from '@site/src/components/ContentRef';
 
-# Getting Started With Appcircle
+# Getting Started With upload-file-tryout
 
 Appcircle is a mobile CI/CD platform which makes it easy for you to manage the lifecycle of your mobile applications.
 

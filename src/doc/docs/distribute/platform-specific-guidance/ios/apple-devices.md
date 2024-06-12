@@ -95,7 +95,7 @@ After selecting the 'Resign binary' option, choose the appropriate provisioning 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/apple-device-certificate.png' />
 
-### Automatically adding registered devices to the provisioning profile 
+### Automatically adding registered devices to the provisioning profile
 
 You can add registered devices to selected provisioning profiles by editing your distribution profile's settings.
 

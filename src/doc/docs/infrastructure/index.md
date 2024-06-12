@@ -1,18 +1,7 @@
 ---
-title: Build Infrastructure
+title: Build Infrastructure 編譯環境
 description: Select the optimal build stack for your iOS or Android applications to ensure compatibility and performance.
-tags:
-  [
-    build infrastructure,
-    build stack,
-    iOS,
-    Android,
-    Xcode,
-    Swift,
-    iOS SDK,
-    Android SDK,
-    Gradle,
-  ]
+tags: [build infrastructure, build stack, iOS, Android, Xcode, Swift, iOS SDK, Android SDK, Gradle]
 ---
 
 # Build Infrastructure

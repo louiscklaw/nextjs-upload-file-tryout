@@ -14,8 +14,8 @@ Appcircle is integrated with the [Firebase Test Lab](https://firebase.google.com
 
 The necessary workflow steps to execute before running the **Firebase Test Lab for Android** workflow step, along with their respective reasons, are listed in the table below.
 
-| Prerequisite Workflow Step                                                            | Description                                                                                                                                                                                                                                                                                              |
-| ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Prerequisite Workflow Step                                     | Description                                                                                                                    |
+| -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | [Android Build for UI Testing](./android-build-for-ui-testing) | The **Android Build for UI Testing** step must be executed to obtain the necessary Android application outputs for processing. |
 
 In addition to the steps you need to run on Appcircle, there are also adjustments you need to make on the Firebase Test Lab side. These adjustments can be made as follows:
@@ -65,15 +65,15 @@ For each component, specific input variables are required for its operation on y
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/firebasetestlab-android-firebase-workflow.png' />
 
-| Variable Name             | Description                                        | Status   |
-|---------------------------|----------------------------------------------------|----------|
-| `$AC_FIREBASE_PROJECT_ID` | Specifies the name of the Firebase project created. | Optional |
-| `$AC_FIREBASE_KEY_FILE`   | Specifies the name of the key file uploaded as an environment variable (`$` is required before the key name). | Optional |
-| `$AC_FIREBASE_TEST_TYPE`  | Specifies the test type. `robo` and `instrumentation` are supported. | Required |
-| `$AC_FIREBASE_BUCKET_NAME`| Specifies the bucket name to store the test results in a Google Cloud Storage bucket. | Optional |
-| `$AC_APK_PATH`            | The default value is the APK produced by the **Android Build** or **Android Build for UI Testing** step. You can specify a different environment variable to use the APK files produced in other steps. | Optional |
-| `$AC_TEST_APK_PATH`       | Specify the environment variable as the path of the APK build for UI testing. The default value is the APK produced by the **Android Build for UI Testing** step. | Optional |
-| `$AC_FIREBASE_EXTRA_ARGS` | Firebase Test Extra Arguments `(e.g., --timeout=3m)`. For further configuration of the test run, please refer to the [Google Cloud CLI](https://cloud.google.com/sdk/gcloud/reference/firebase/test/android/run) documentation. | Optional |
+| Variable Name              | Description                                                                                                                                                                                                                     | Status   |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| `$AC_FIREBASE_PROJECT_ID`  | Specifies the name of the Firebase project created.                                                                                                                                                                             | Optional |
+| `$AC_FIREBASE_KEY_FILE`    | Specifies the name of the key file uploaded as an environment variable (`$` is required before the key name).                                                                                                                   | Optional |
+| `$AC_FIREBASE_TEST_TYPE`   | Specifies the test type. `robo` and `instrumentation` are supported.                                                                                                                                                            | Required |
+| `$AC_FIREBASE_BUCKET_NAME` | Specifies the bucket name to store the test results in a Google Cloud Storage bucket.                                                                                                                                           | Optional |
+| `$AC_APK_PATH`             | The default value is the APK produced by the **Android Build** or **Android Build for UI Testing** step. You can specify a different environment variable to use the APK files produced in other steps.                         | Optional |
+| `$AC_TEST_APK_PATH`        | Specify the environment variable as the path of the APK build for UI testing. The default value is the APK produced by the **Android Build for UI Testing** step.                                                               | Optional |
+| `$AC_FIREBASE_EXTRA_ARGS`  | Firebase Test Extra Arguments `(e.g., --timeout=3m)`. For further configuration of the test run, please refer to the [Google Cloud CLI](https://cloud.google.com/sdk/gcloud/reference/firebase/test/android/run) documentation. | Optional |
 
 Once everything is set up, press save to save your step configuration. Then you can configure and run your build just like any other app.
 

@@ -13,7 +13,7 @@ Google Service Account is required to upload your binary to Google Play Store. T
 
 1. Please go to [Google Cloud Platform](https://console.cloud.google.com/apis) and create a Google Cloud Project.
 
-2. **Enable** the Google Play Developer API for your Google Cloud Project. 
+2. **Enable** the Google Play Developer API for your Google Cloud Project.
 
 3. Login with your account, then head over to **Credentials -> Create Credentials**, and then click **Service account**.
 
@@ -70,11 +70,10 @@ Then click **Invite User**. Your account key is ready. 🎉
     a. Navigate to [My Organization](/account/my-organization).
 
     b. Locate the `Google Play Developer API Keys` under the `Connections` section.
-  
+
     c. Click the `Manage` button if you have saved keys, or directly click the `Add New` button.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service14.png' />
-
 
 ## FAQ
 

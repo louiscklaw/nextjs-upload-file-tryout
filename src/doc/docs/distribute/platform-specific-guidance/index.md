@@ -1,16 +1,7 @@
 ---
 title: Platform-Specific Guidance
 description: Learn how to distribute your mobile applications for testing on the iOS and Android platforms. Follow the platform-specific guides to ensure a smooth testing process.
-tags:
-  [
-    iOS testing,
-    Android testing,
-    TestFlight,
-    Google Play,
-    internal testing,
-    app distribution,
-    testing distribution,
-  ]
+tags: [iOS testing, Android testing, TestFlight, Google Play, internal testing, app distribution, testing distribution]
 ---
 
 # Platform-Specific Guidance

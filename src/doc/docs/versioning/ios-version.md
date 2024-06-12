@@ -99,24 +99,23 @@ You can use the above values in the remaining steps of your workflow.
 
 The versioning system works by consuming environment variables. Even though it's easier to configure it by using UI, sometimes you may want to change them on the fly. Your commit messages or tags can be used to override those settings. The name of the variables and expected values can be found below.
 
-| Variable Name                 | Description                                                                                                          | Status   |
-| ----------------------------- | -------------------------------------------------------------------------------------------------------------------- |----------|
-| `$AC_REPOSITORY_DIR`          | This variable represents the path of the cloned Git repository. If it runs after the [Git Clone](/workflows/common-workflow-steps/git-clone) step, the variable will be automatically populated.                                               | Required |
-| `$AC_PROJECT_PATH`            | Specifies the project path. For example: `./appcircle.xcodeproj`. | Required |
-| `$AC_SCHEME`                  | Specifies the project scheme for the build. | Required |
-| `$AC_BUILD_NUMBER_SOURCE`     | Build number source type(env variable or Xcode). | Optional |
-| `$AC_IOS_BUILD_NUMBER`        | Build number. The default variable is `$AC_BUILD_NUMBER`. | Optional |
-| `$AC_BUILD_OFFSET`            | Build incremeent offset. | Optional |
-| `$AC_VERSION_NUMBER_SOURCE`   | Version number source type(env variable, Xcode or App Store). | Optional |
-| `$AC_IOS_VERSION_NUMBER`      | Version number. | Optional |
-| `$AC_VERSION_STRATEGY`        | Version increment strategy `major`, `minor`, `patch`, or `keep`. The default variable is keep  | Optional |
-| `$AC_VERSION_OFFSET`          | The number to be added or subtracted from the version number. Negative values can be written such as -10. The default variable is `0`. | Optional |
-| `$AC_OMIT_ZERO_PATCH_VERSION` | If true omits zero in patch version (so `42.10.0` will become `42.10` and `42.10.1` will remain `42.10.1`), default is false. | Optional |
-| `$AC_BUNDLE_ID`               | If the build number source is `appstore`, this variable should have the bundle id of your application. | Optional |
-| `$AC_APPSTORE_COUNTRY`        | If the build number source is `appstore`, optional two letter country code. | Optional |
-| `$AC_TARGETS`                 | Name of the targets to update. You can separate multiple targets by the pipe symbol. If you don't specify any target, all runnable targets will be updated. | Optional |
-| `$AC_IOS_CONFIGURATION_NAME`  | The build configuration to use. If you don't specify any configuration, the target's archive configuration will be used. | Optional |
-
+| Variable Name                 | Description                                                                                                                                                                                      | Status   |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- |
+| `$AC_REPOSITORY_DIR`          | This variable represents the path of the cloned Git repository. If it runs after the [Git Clone](/workflows/common-workflow-steps/git-clone) step, the variable will be automatically populated. | Required |
+| `$AC_PROJECT_PATH`            | Specifies the project path. For example: `./appcircle.xcodeproj`.                                                                                                                                | Required |
+| `$AC_SCHEME`                  | Specifies the project scheme for the build.                                                                                                                                                      | Required |
+| `$AC_BUILD_NUMBER_SOURCE`     | Build number source type(env variable or Xcode).                                                                                                                                                 | Optional |
+| `$AC_IOS_BUILD_NUMBER`        | Build number. The default variable is `$AC_BUILD_NUMBER`.                                                                                                                                        | Optional |
+| `$AC_BUILD_OFFSET`            | Build incremeent offset.                                                                                                                                                                         | Optional |
+| `$AC_VERSION_NUMBER_SOURCE`   | Version number source type(env variable, Xcode or App Store).                                                                                                                                    | Optional |
+| `$AC_IOS_VERSION_NUMBER`      | Version number.                                                                                                                                                                                  | Optional |
+| `$AC_VERSION_STRATEGY`        | Version increment strategy `major`, `minor`, `patch`, or `keep`. The default variable is keep                                                                                                    | Optional |
+| `$AC_VERSION_OFFSET`          | The number to be added or subtracted from the version number. Negative values can be written such as -10. The default variable is `0`.                                                           | Optional |
+| `$AC_OMIT_ZERO_PATCH_VERSION` | If true omits zero in patch version (so `42.10.0` will become `42.10` and `42.10.1` will remain `42.10.1`), default is false.                                                                    | Optional |
+| `$AC_BUNDLE_ID`               | If the build number source is `appstore`, this variable should have the bundle id of your application.                                                                                           | Optional |
+| `$AC_APPSTORE_COUNTRY`        | If the build number source is `appstore`, optional two letter country code.                                                                                                                      | Optional |
+| `$AC_TARGETS`                 | Name of the targets to update. You can separate multiple targets by the pipe symbol. If you don't specify any target, all runnable targets will be updated.                                      | Optional |
+| `$AC_IOS_CONFIGURATION_NAME`  | The build configuration to use. If you don't specify any configuration, the target's archive configuration will be used.                                                                         | Optional |
 
 Since you can use any environment variables for the build and version numbers, you can consume Appcircle's various environment variables during the build. Appcircle gives plenty of information related to your repo and project.
 

@@ -1,5 +1,5 @@
 ---
-title: "Platform-Specific Guidance: iOS"
+title: 'Platform-Specific Guidance: iOS'
 description: Learn how to distribute your iOS mobile applications for testing and production. Follow the platform-specific guides to ensure a smooth testing process and successful deployment.
 tags: [iOS testing, iOS distribution, iOS app deployment, iOS app distribution]
 ---

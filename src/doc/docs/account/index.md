@@ -1,19 +1,7 @@
 ---
 title: My Account / My Organization
 description: Manage personal and organizational settings in Appcircle. Configure integrations, notifications, and artifacts for your account and organization.
-tags:
-  [
-    account,
-    organization,
-    settings,
-    integrations,
-    notifications,
-    artifacts,
-    webhooks,
-    distribution,
-    ldap,
-    sso,
-  ]
+tags: [account, organization, settings, integrations, notifications, artifacts, webhooks, distribution, ldap, sso]
 ---
 
 # My Account / My Organization

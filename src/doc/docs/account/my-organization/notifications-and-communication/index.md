@@ -1,16 +1,7 @@
 ---
 title: Notifications and Communication
 description: Keep your team informed and aligned with real-time notifications and communication options in Appcircle.
-tags:
-  [
-    account,
-    organization,
-    notifications,
-    communication,
-    slack,
-    email,
-    microsoft teams,
-  ]
+tags: [account, organization, notifications, communication, slack, email, microsoft teams]
 ---
 
 # Notification Integration

@@ -1,5 +1,5 @@
 ---
-title: Latest Release Notes
+title: 分發筆記 Release Notes
 description: Appcircle release notes
 tags: [release notes]
 sidebar_position: 3
@@ -32,7 +32,7 @@ import ContentRef from '@site/src/components/ContentRef';
 ### 🐞 Fixes
 
 - We have resolved issues that could cause crashes when running multiple builds simultaneously, enhancing the overall stability and reliability of the build process. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
-- We have enhanced security for remote repository connections in the Build module.  <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- We have enhanced security for remote repository connections in the Build module. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where build logs were being saved prematurely due to a time synchronization problem, causing logs to be saved before the end of the process. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where API returned incorrect response code for requests with invalid commitId or buildId. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where the Admin Build Details section showed incorrect build status for cancelled builds. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>

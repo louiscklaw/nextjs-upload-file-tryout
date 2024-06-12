@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import Select from '../Select';
-import "./TextInputCircle.scss";
-export const SelectCircle = (props) => {
+import './TextInputCircle.scss';
+export const SelectCircle = props => {
   return (
     <div className="TextInputCircle">
       <div className="TextInputCircle_Label">
@@ -12,4 +12,4 @@ export const SelectCircle = (props) => {
   );
 };
 
-export default SelectCircle
+export default SelectCircle;

@@ -1,14 +1,7 @@
 ---
 title: Testing Management
 description: Learn how to manage testing processes effectively to ensure the quality and reliability of your applications. Discover best practices for testing automation, continuous testing, and test coverage optimization.
-tags:
-  [
-    testing management,
-    testing automation,
-    continuous testing,
-    test coverage,
-    quality assurance,
-  ]
+tags: [testing management, testing automation, continuous testing, test coverage, quality assurance]
 ---
 
 # Testing Management

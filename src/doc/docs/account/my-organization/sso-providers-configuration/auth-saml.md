@@ -52,9 +52,7 @@ SSO can only be enabled by the organization's administrator. To start, go to [My
 ```json
 {
   "nameIdentifierFormat": "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress",
-  "nameIdentifierProbes": [
-    "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress"
-  ]
+  "nameIdentifierProbes": ["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress"]
 }
 ```
 

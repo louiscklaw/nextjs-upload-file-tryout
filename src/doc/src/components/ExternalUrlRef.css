@@ -85,29 +85,29 @@
   }
 }
 
-html[data-theme="dark"] {
+html[data-theme='dark'] {
   --erc-container-bg: #333;
   --erc-text-color: #ddd;
   --erc-border-color: #555;
   --erc-shadow-color: rgba(255, 255, 255, 0.1);
 }
 
-html[data-theme="dark"] .erc-container {
+html[data-theme='dark'] .erc-container {
   background-color: var(--erc-container-bg);
   color: var(--erc-text-color);
   border-color: var(--erc-border-color);
 }
 
-html[data-theme="dark"] .erc-container:hover {
+html[data-theme='dark'] .erc-container:hover {
   background-color: var(--erc-container-bg);
   box-shadow: 0 4px 30px 0 var(--erc-shadow-color);
 }
 
-html[data-theme="dark"] .erc-title {
+html[data-theme='dark'] .erc-title {
   color: var(--erc-text-color);
 }
 
-html[data-theme="dark"] .erc-description,
-html[data-theme="dark"] .erc-url {
+html[data-theme='dark'] .erc-description,
+html[data-theme='dark'] .erc-url {
   color: var(--erc-text-color);
 }

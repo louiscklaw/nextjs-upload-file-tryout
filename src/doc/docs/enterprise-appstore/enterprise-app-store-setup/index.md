@@ -1,15 +1,7 @@
 ---
 title: Enterprise App Store Setup
 description: Setting up your Enterprise App Store is a streamlined process with Appcircle. Learn how to create a profile, configure it, and customize the appearance of your app store.
-tags:
-  [
-    enterprise app store,
-    app distribution,
-    app deployment,
-    enterprise apps,
-    app store setup,
-    appcircle app store,
-  ]
+tags: [enterprise app store, app distribution, app deployment, enterprise apps, app store setup, appcircle app store]
 ---
 
 # Enterprise App Store Setup

@@ -4,7 +4,6 @@ description: Enhance your app testing with Appium Server. Automate mobile app te
 tags: [testing, automation, server, cli, development]
 ---
 
-
 import Screenshot from '@site/src/components/Screenshot';
 
 # Appium Server
@@ -27,6 +26,6 @@ Below is a list of input variables that can be used with this component, with a 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2795-appiumInput.png' />
 
-| Variable Name                 | Description                                    | Status           |
-|-------------------------------|------------------------------------------------|------------------|
-| `$AC_APPIUM_VERSION`          | Specifies the version of Appium Server to install, such as `v1.22.3`. If you do not specify a version, the system installs the latest version. | Optional |
+| Variable Name        | Description                                                                                                                                    | Status   |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| `$AC_APPIUM_VERSION` | Specifies the version of Appium Server to install, such as `v1.22.3`. If you do not specify a version, the system installs the latest version. | Optional |

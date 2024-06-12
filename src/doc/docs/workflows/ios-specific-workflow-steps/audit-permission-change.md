@@ -16,8 +16,8 @@ The system conducts this check using a reference branch. First, run the pipeline
 
 Before running the **Audit Permission Changes** step, you must complete certain prerequisites, as detailed in the table below:
 
-| Prerequisite Workflow Step                      | Description                                     |
-|-------------------------------------------------|-------------------------------------------------|
+| Prerequisite Workflow Step                              | Description                                                                                                                                                                                            |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [Git Clone](/workflows/common-workflow-steps/git-clone) | You need to clone the repository to start the Audit Permission Changes process. After cloning, the system installs CocoaPods. After this step works, the variable `AC_REPOSITORY_DIR` will be created. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3179-permissionOrder.png' />
@@ -36,12 +36,11 @@ You can find all the parameters required for this step in the table below, with 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3179-permissionInput.png' />
 
-| Variable Name                            | Description                         | Status           |
-|-------------------------------|------------------------------------------------|------------------|
-| `$AC_REFERENCE_BRANCH`        | Specifies the reference branch to check permissions. | Required |
-| `$AC_REPOSITORY_DIR`          | Specifies the cloned repository directory. This path will be generated after the [Git Clone](/workflows/common-workflow-steps/git-clone) step. | Required |
-| `$AC_PROJECT_PATH`            | Specifies the project path. For example: `./appcircle.xcodeproj` | Required |
-
+| Variable Name          | Description                                                                                                                                    | Status   |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| `$AC_REFERENCE_BRANCH` | Specifies the reference branch to check permissions.                                                                                           | Required |
+| `$AC_REPOSITORY_DIR`   | Specifies the cloned repository directory. This path will be generated after the [Git Clone](/workflows/common-workflow-steps/git-clone) step. | Required |
+| `$AC_PROJECT_PATH`     | Specifies the project path. For example: `./appcircle.xcodeproj`                                                                               | Required |
 
 To access the source code of this component, please use the following link:
 

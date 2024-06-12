@@ -1,7 +1,7 @@
 ---
-title: Continuous Testing
+title: Continuous Testing 持續整合
 description: Appcircle provides a variety of testing options for your mobile applications.
-tags: [testing, continuous testing]
+tags: [testing, continuous testing, continuous integration, ci]
 sidebar_position: 1
 hide_table_of_contents: true
 ---

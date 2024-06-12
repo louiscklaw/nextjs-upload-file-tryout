@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 // Generic Badge Component that accepts an icon
 const Badge = ({ children, className, icon: Icon }) => (
