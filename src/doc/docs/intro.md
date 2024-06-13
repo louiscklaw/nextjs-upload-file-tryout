@@ -13,8 +13,9 @@ import NewBadge from '@site/src/components/NewBadge';
 
 <div class="intro-visual">
   <div class="intro-text">
-    <h5 class="intro-visual-header">File Share</h5>
-    <p>Make better, safer mobile app file upload.</p>
+    <h5 class="intro-visual-header">File Share<br />(檔案分享)</h5>
+    <p>Make better, safer mobile app file upload. </p>
+    <p>製造更快，更安全，可移動的檔案分享工具。</p>
   </div>
   <div className="intro-image">
     <img src="./img/posts/home_screen.png" />

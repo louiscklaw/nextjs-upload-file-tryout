@@ -2,4 +2,4 @@ rmdir /s /q ..\..\docs\
 
 mkdir ..\..\docs\
 
-xcopy .\build ..\..\docs /E
+xcopy .\build ..\..\docs\zh /E

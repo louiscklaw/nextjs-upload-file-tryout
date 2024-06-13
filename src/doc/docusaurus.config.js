@@ -17,7 +17,7 @@ const config = {
   url: 'https://docs.appcircle.io',
   favicon: 'img/favicon.ico',
 
-  baseUrl: '/nextjs-upload-file-tryout/',
+  baseUrl: '/nextjs-upload-file-tryout/zh',
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -72,32 +72,14 @@ const config = {
             </a>
             `,
           },
-          {
-            to: '/',
-            position: 'left',
-            label: 'Documentation',
-          },
-          {
-            to: '/',
-            position: 'left',
-            label: 'Release Notes',
-          },
-          {
-            href: 'https://share.louislabs.com',
-            label: 'Demo Apps',
-            position: 'right',
-          },
+          { to: '/', position: 'left', label: 'Documentation' },
+          { to: '/', position: 'left', label: 'Release Notes' },
+          { href: 'https://share.louislabs.com', label: 'Demo Apps', position: 'right' },
           {
             type: 'dropdown',
             items: [
-              {
-                label: 'Github',
-                href: 'https://github.com/louiscklaw',
-              },
-              {
-                label: 'LinkedIn',
-                href: 'https://www.linkedin.com/company/louiscklaw',
-              },
+              { label: 'Github', href: 'https://github.com/louiscklaw' },
+              { label: 'LinkedIn', href: 'https://www.linkedin.com/company/louiscklaw' },
             ],
             label: 'Find me ?',
             position: 'right',
@@ -116,40 +98,19 @@ const config = {
         links: [
           {
             title: 'Docs',
-            items: [
-              {
-                label: 'Getting Started',
-                type: 'doc',
-                to: '/',
-              },
-            ],
+            items: [{ label: 'Getting Started', type: 'doc', to: '/' }],
           },
           {
             title: 'Community',
-            items: [
-              {
-                label: 'How-To Videos',
-                href: 'https://www.youtube.com/appcircle',
-              },
-            ],
+            items: [{ label: 'How-To Videos', href: 'https://www.youtube.com/appcircle' }],
           },
           {
             title: 'Find Me',
-            items: [
-              {
-                label: 'Slack',
-                href: 'https://join.slack.com/t/appcircleio/signup',
-              },
-            ],
+            items: [{ label: 'Slack', href: 'https://join.slack.com/t/appcircleio/signup' }],
           },
           {
             title: 'Explore More',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/appcircleio/appcircle-docusaurus',
-              },
-            ],
+            items: [{ label: 'GitHub', href: 'https://github.com/appcircleio/appcircle-docusaurus' }],
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Louislabs. Built with Docusaurus.`,
@@ -186,13 +147,7 @@ const config = {
       },
     }),
   plugins: [
-    [
-      '@docusaurus/plugin-google-analytics',
-      {
-        trackingID: 'UA-40954643-12',
-        anonymizeIP: true,
-      },
-    ],
+    ['@docusaurus/plugin-google-analytics', { trackingID: 'UA-40954643-12', anonymizeIP: true }],
     'docusaurus-plugin-sass',
     'plugin-image-zoom',
   ],
