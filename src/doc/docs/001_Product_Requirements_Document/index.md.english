@@ -1,0 +1,49 @@
+---
+title: General
+description: Streamline your app development with the Build Module on Appcircle, which offers automated builds for iOS and Android platforms. With just a few clicks, you can set up continuous integration and delivery pipelines, making your development process more efficient and hassle-free.
+tags: [Product-Requirement-Document, CI/CD, iOS, Android, automation]
+sidebar_position: 001
+---
+
+## Overview
+
+The Build Module is a powerful feature of Appcircle that simplifies the app development process. It provides an intuitive interface for configuring and managing automated builds for iOS and Android applications. With this module, you can set up continuous integration and delivery pipelines, enabling automatic building, testing, and deployment of your app with every code change.
+
+## Features
+
+- **Automated Builds**: The Build Module automates the entire build process, from compiling code to generating APK or IPA files. Just connect your code repository, and let Appcircle handle the rest.
+- **Continuous Integration**: Easily set up continuous integration pipelines that automatically trigger builds whenever there are changes to your code. This ensures that your app is always up-to-date and allows for early detection of issues.
+- **Delivery Options**: Choose how you want your app to be delivered. You can opt for automatic deployment to app stores, internal distribution within your organization, or generate download links for manual distribution.
+- **Customizability**: The Build Module offers a wide range of customization options to tailor the build process to your specific needs. You can configure build settings, select the desired build type (debug/release), and even integrate third-party tools or scripts.
+- **Parallel Builds**: Speed up your development cycle by running multiple builds in parallel. This feature allows you to test different versions or configurations of your app simultaneously, saving valuable time.
+- **Build Artifacts**: Easily access and download build artifacts such as APK or IPA files, logs, and test reports. Appcircle provides a centralized location for storing and managing these artifacts, making it convenient for collaboration and distribution.
+
+## Benefits
+
+- **Efficiency**: The Build Module streamlines your app development process by automating repetitive tasks and eliminating manual interventions. This saves time, reduces human errors, and allows your team to focus on core development activities.
+- **Consistency**: With automated builds and continuous integration, you can ensure that your app is built and tested consistently across different versions and platforms. This consistency leads to improved app quality and a smoother user experience.
+- **Agility**: The Build Module enables you to iterate faster on your app development. With automated builds and continuous integration, you can catch issues early, deploy changes quickly, and respond swiftly to market demands or user feedback.
+- **Collaboration**: The centralized build management system facilitates collaboration among team members. Build configurations, artifacts, and logs are easily accessible, enabling seamless cooperation between developers, testers, and other stakeholders.
+- **Scalability**: The Build Module is designed to scale with your app's growth. Whether you're working on a small project or a large-scale enterprise application, the module can handle the build process efficiently, ensuring smooth development and deployment.
+
+## Use Cases
+
+- **Continuous Integration and Delivery**: Set up CI/CD pipelines to automatically build, test, and deploy your app with every code change. This ensures that your app is always in a deployable state and facilitates continuous feedback and improvement.
+- **Parallel Testing**: Run multiple builds in parallel to test different versions or configurations of your app simultaneously. This speeds up the testing process and helps identify compatibility issues or performance differences across various environments.
+- **Internal Distribution**: Use the Build Module to distribute your app internally within your organization for testing or beta-testing purposes. You can control who has access to the app and collect feedback from a select group of users.
+- **App Store Deployment**: Automate the process of deploying your app to app stores. With the Build Module, you can set up automatic submission to Apple App Store or Google Play Store, saving you time and ensuring a smooth release process.
+- **A/B Testing**: The Build Module facilitates A/B testing by allowing you to create multiple builds with different configurations or features. You can then distribute these builds to a subset of users and analyze the feedback to make data-driven decisions.
+
+## Conclusion
+
+The Build Module in Appcircle is a powerful tool that revolutionizes the app development process. By offering automated builds, continuous integration, and customizable delivery options, it streamlines the journey from code to deployment. With its efficiency, consistency, and scalability, the Build Module enables development teams to focus on innovation and delivering exceptional apps to their users.
+
+--- 
+
+## 参考
+
+https://www.woshipm.com/pmd/3327770.html
+
+## 鸣谢
+
+https://www.woshipm.com/pmd/3327770.html

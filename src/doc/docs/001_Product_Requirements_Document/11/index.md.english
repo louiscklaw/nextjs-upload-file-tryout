@@ -1,0 +1,34 @@
+---
+
+title: 11. Modification Records / Version Control 
+
+description: Get acquainted with the Build History Report in Appcircle, which allows you to track build sessions initiated over a specified time period. 
+
+tags: [reports, build history, build sessions, testing]
+
+--- 
+
+## Objective: 
+
+The PRD document will have version numbers, recording the time and reason for each change, among other information. 
+
+Version management of documentation is crucial. Any modifications to the document should include a detailed description of the project context, encompassing the current business situation, challenges faced, and proposed solutions. This description should be supported by relevant data. 
+
+| Change Date | Change Content | Department/Person Proposing Change and Reason | Reviewer | Version | 
+| :---------: | :-----------: | :------------------------------------------: | :------: | :-----: | 
+| 2024-05-01 | Initial Draft |              ...                           |    ...   |  ...    | 
+
+--- 
+
+**Description:** 
+
+This feature will enable users to keep a detailed record of changes made to the PRD document, ensuring a clear audit trail. By including the time, reason, and person/department initiating the change, it provides transparency and facilitates a better understanding of the document's evolution. 
+
+**Tags:** 
+
+- reports: This feature generates reports that outline the build history and provide insights into the development process. 
+- build history: It offers a historical record of build sessions, allowing users to track and review previous builds. 
+- build sessions: The report focuses on providing details regarding specific build sessions, including the time of initiation. 
+- testing: By reviewing previous build sessions and their changes, this feature aids in the testing and quality assurance process, helping to identify issues and improvements. 
+
+---

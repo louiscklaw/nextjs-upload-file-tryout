@@ -1,0 +1,24 @@
+---
+
+title: 5. Data Instrumentation
+
+description: Get acquainted with the Build History Report in Appcircle, which tracks build sessions initiated over a specified time interval. Understand how to employ data instrumentation to gather user behavior data, such as clicks, swipes, searches, and purchases.
+
+tags: [reports, build history, build sessions, testing, data instrumentation, user behavior analytics]
+
+---
+
+Data Instrumentation, as the name suggests, involves embedding markers within an application or website to collect various user behavior data during their interaction with the product. This encompasses clicks, swipes, searches, purchases, and more.
+
+These data points are invaluable for analyzing user behavior, optimizing product features, enhancing the user experience, and boosting conversion rates. They provide a comprehensive view of user behavior patterns, preferences, and requirements, enabling data-driven decisions for product enhancements and growth strategies.
+
+Specifically, data instrumentation assists data product managers and data analysts in understanding user behavior flows, preferences, and needs. This insights enable them to optimize product features, design, and marketing strategies, ultimately improving user retention, conversion rates, and overall user satisfaction.
+
+Moreover, data instrumentation serves as a crucial foundation for evaluating product effectiveness and gathering user feedback. By delving into the data through in-depth analysis, it becomes possible to identify pain points and unmet user needs, allowing for the development of more precise product solutions and services. This, in turn, strengthens user loyalty and fosters a more engaging product experience.
+
+> Objective: Describe the buttons, pages, events, etc., that require monitoring through data instrumentation, adhering to uniform instrumentation requirements.
+
+### ClickFunnels (Click Funnel)
+
+To be added (TBA)
+

@@ -1,0 +1,65 @@
+Here is the English translation of the provided Markdown content:
+
+```
+---
+title: 10. Project Scope / Project Risk
+description: Get familiar with the Build History Report in Appcircle, which tracks build sessions initiated over a specific time period.
+tags: [reports, build history, build sessions, testing]
+---
+
+## Project Scope
+
+Outline the systems and products involved in the project, as well as the project's scope of influence.
+
+## Project Risk
+
+Identify and address product, operational, and technical risks that may arise during the project.
+
+N/A
+
+## Product Requirements
+
+### Product Framework Overview
+
+Provide a brief overview of the product's functionality, including system framework diagrams, data models, business processes, and use cases.
+
+| # | Submitter | Submission Time | Module | Name | Description | Proposer | Proposal Time | Bug # | Classification | Level | Importance | Urgency | Duration | Business Value | Development Volume | Cost-effectiveness | Status | Responsible PD | Development Engineer | Project Name | Release Time | Remarks |
+| ---- | -------- | -------- | ------ | ------ | ------ | -------- | -------- | -------- | ---- | ---- | ------ | ------ | -------- | -------- | ------ | ------ | ------ | ------- | ---------- | -------- | -------- | ---- |
+| 1    | Submitter 1 | ---      | Module 1 | Feature 1 | Description 1 | New Feature | ---      | ---      | ---  | ---  | ---    | ---    | ---      | 5        | 10     | ---    | To Be Discussed | ---     | ---        | ---      | ---      | ---  |
+| 1    | Submitter 1 | ---      | Module 1 | Feature 1 | Description 1 | New Feature | ---      | ---      | ---  | ---  | ---    | ---    | ---      | 5        | 10     | ---    | Requirement in Progress | ---     | ---        | ---      | ---      | ---  |
+| 1    | Submitter 1 | ---      | Module 1 | Feature 1 | Description 1 | New Feature | ---      | ---      | ---  | ---  | ---    | ---    | ---      | 5        | 10     | ---    | Postponed   | ---     | ---        | ---      | ---      | ---  |
+| 1    | Submitter 1 | ---      | Module 1 | Feature 1 | Description 1 | New Feature | ---      | ---      | ---  | ---  | ---    | ---    | ---      | 5        | 10     | ---    | In Development | ---     | ---        | ---      | ---      | ---  |
+| 1    | Submitter 1 | ---      | Module 1 | Feature 1 | Description 1 | New Feature | ---      | ---      | ---  | ---  | ---    | ---    | ---      | 5        | 10     | ---    | Released | ---     | ---        | ---      | ---      | ---  |
+
+![Product Framework Diagram](image-1.png)
+
+### Product Demand Analysis
+
+Describe the product's requirements and functionality in detail.
+
+#### Abnormal Situation Handling
+
+Explain how to handle abnormal situations such as misoperation, data loss, and network disconnection.
+
+#### Detailed Demand List
+
+Provide a detailed list of demands by module or feature, including but not limited to:
+
+- Function Description: Clearly and concisely describe the core content and purpose of the function.
+- User Scenario: Illustrate the user scenarios in which this function will be used to help the development team understand its practical application environment.
+- Input/Output: Specify the data input and expected output of the function.
+- Non-functional Requirements: Include performance requirements (response time, concurrent processing capacity, etc.), security requirements, compatibility requirements, and other non-functional demands.
+- Priority: Indicate the priority of each function, typically categorized as high, medium, or low.
+
+| Interface | Module | Function Name | Function Description | Priority |
+| ---- | -------- | -------- | -------------------- | :----: |
+| APP  | Comment Module | Comment Function | Display user comments |   P0   |
+| APP  | Comment Module | Report Function | Report individual comments |   P0   |
+| ...  | ...      | ...      | ...                  |  ...   |
+```
+
+**Description:**
+Get familiar with the Build History Report feature in Appcircle, which allows users to track and review build sessions initiated over a specific time period. 
+
+**Tags:**
+reports, build-history, build-sessions, testing

@@ -1,0 +1,176 @@
+---
+title: 1. 项目背景
+description: Get familiar with the Build History Report in Appcircle, tracking build sessions initiated over a specific time period.
+tags: [reports, build history, build sessions, testing]
+---
+
+### 1.1 背景描述
+
+<!-- prompt:
+I am working on a project about file-sharing web page, the function of this project is something like `fileshare.io`
+please elaborate the below text to a paragraph and output your answer in simplified chinese.
+
+```
+### 1.1 背景描述
+
+- 基本上這應該是一個 To C 產品，是面向普通用户的
+- 我想方便我平時檔案交換方式, 等人哋可以方便啲去 send file 畀我, 兒童一時間我又可以好容易咁 send 到 file 畀人, 唔受時間地點所限
+```
+-->
+
+一个文件共享网页项目，这是一个便捷的文件传输解决方案，旨在消除时间和地点对文件共享的限制。此产品的目标用户是普通大众，即 "To C"产品。
+
+希望打造一个简单易用的平台，让任何人都可以快速、轻松地发送和接收文件，无需考虑双方是否处于同一时间和地点。这个构想背后的动机来源于您自身对更高效、便捷的文件交换方式的需求，相信这也会是许多人的共同需求。
+
+该网页将成为一个中心化文件交换中心，连接起有文件传输需求的个人，使他们能够突破传统限制，实现高效文件共享。
+
+### 1.2 收益分析
+
+<!--
+I am working on a project about file-sharing web page, the function of this project is something like `fileshare.io`
+please elaborate the below text to a paragraph and output your answer in simplified chinese.
+
+```
+### 1.2 收益分析
+
+- 項目自己本身沒有收益, 收益來自於去牽涉的服務, 例如平時我幫人去做 commission, 當有個咁嘅系統, 流程上會方便好多
+```
+-->
+
+此项目的本质在于提升文件共享的效率和便利性，其本身并不直接创造收益。
+
+然而，它的价值在于能够促进其他服务的收益增长。
+
+例如，当个人能够通过此文件共享平台高效地完成工作交易（如佣金任务）时，整个流程将变得更加顺畅。
+这种高效的文件传输可以为相关方节省大量时间和精力，从而提高他们的工作效率和收益。
+因此，尽管该项目本身不直接产生利润，但它可以为涉及的各方带来显著的间接收益，并提高他们的整体工作效率
+
+### 1.3 方案概述
+
+- nextjs (網頁/後端框架)
+- docker(container 框架)
+- file pool/minio (檔案儲存)
+
+### 1.4 功能需求
+
+<!-- prompt:
+I am working on a project about file-sharing web page, the function of this project is something like `fileshare.io`
+please elaborate the below text and output your answer in simplified chinese.
+
+```
+### 1.4 功能需求
+
+- 能夠讓用戶, 在桌面電腦或者是在手提電話上除以存檔案給我, 或者是當有戶收到我的連結, 可以於桌面電腦或電話上下載,
+- 同時, 頁面上有一個 qr code, 可以方便用戶之間分享檔.
+- 大小暫時設定為 100mb.
+- 檔案封存時間不限. 直至可能伺服器重啟為止
+```
+- 为用户提供文件管理功能，如重命名、移动、删除等。
+-->
+
+- 允许用户通过桌面电脑或手机上传文件，或通过分享链接下载文件。
+- 當用戶上傳成功後，在网页上生成一个 QRCode 以方便用户之间分享文件。
+- 文件大小限制在 100MB 以内。
+- 除非服务器重启，否则不限制文件存档时间。
+- 用户上传和下载文件的流程需简单易懂，方便用户使用。
+- 确保文件传输过程的安全性和隐私保护。
+- 支持多种文件格式，如文档、图片、视频等。
+
+### 1.5 异常处理
+
+<!-- prompt:
+I am working on a project about file-sharing web page, the function of this project is something like `fileshare.io`
+
+- output your answer in simplified chinese.
+- 請拓展和潤飾我的文章
+
+```
+### 1.5 异常处理
+
+- 一般來說, 可能夠想像得到的異常處理. 只有我的伺服器重啟. 而暫時, 對於處理異常(隱定性) 呢方面, 要求定不高
+```
+ -->
+
+#### 1.5.1 预期异常处理
+
+在一般情况下，我们可以预见的异常处理。例如，我的服务器可能会重启。对于这类情况的异常处理，我们的要求不高，只需要具备基本的异常处理功能即可。
+
+#### 1.5.2 意外异常处理
+
+然而，在某些特殊情况下，可能会发生一些无法预见的异常。例如，服务器意外断电、硬件故障等。对于这类异常，我们需要有更加完善的处理机制。
+
+#### 1.5.3 异常恢复
+
+除了处理异常本身之外，我们还需要考虑如何从异常中恢复。例如，在服务器重启后，如何恢复之前正在进行的文件传输？如何避免数据丢失或损坏？
+
+#### 1.5.4 日志记录
+
+此外，完善的日志记录机制对于异常处理也至关重要。详细的日志可以帮助我们追踪和分析异常的原因，并制定相应的解决方案。
+
+### 1.6 角色权限
+
+<!-- prompt:
+I am working on a project about file-sharing web page, the function of this project is something like `fileshare.io`
+
+- output your answer in simplified chinese.
+- 請拓展和潤飾我的文章
+
+```
+### 1.6 角色权限
+
+- 還是角色權限只有兩個, 第一是用戶, 第二是 admin(即係我). admin panel 暫時未有.
+- 用戶暫時不需要登陸. 全部看成為匿名用戶.
+- 只要用戶拿到連結, 就可以把當下載.
+- 連結當中帶有一個 scramble. 所以用戶之間應該不能夠猜到其他用戶的連結. 這是安全性的小小考慮
+```
+ -->
+
+目前，该应用程序仅定義了两种角色：用户和管理员。管理员是您，具有最高级别的访问权限，可以完全控制应用程序及其功能。另一方面，用户角色是指访问该应用程序的匿名用户。
+
+**用户角色功能**
+
+- 用户无需登录或注册即可访问该应用程序。他们被默认视为匿名用户。
+- 用户只需拥有链接即可下载文件。这些链接是加密的，确保其他用户无法猜测或推断出链接。这是一个增强安全性的功能。
+- 用户可以轻松共享和下载文件，无需任何身份验证过程。
+
+**管理员角色功能**
+管理员角色（即您的角色）具有更多的权限和功能：
+
+- 您可以完全访问管理员面板（尚未构建）。在这个面板中，您可以管理应用程序的所有方面。
+- 能够创建和管理用户角色，分配或撤销特定权限。
+- 监控和管理文件共享活动。您可以查看共享的所有文件，还可以删除或禁用对特定文件的访问。
+- 管理链接：您可以生成和管理加密链接。这包括设置链接到期日期、控制访问并确保链接安全。
+- 完全控制应用程序设置、外观和用户体验。
+
+目前，该应用程序专注于基本的文件共享功能。管理员面板的开发将被推迟，以便专注于核心功能。但是，随着应用程序的发展，管理员角色将被赋予更多的权限和自定义选项。
+
+### 1.7 用戶故事/情境
+
+<!-- prompt:
+I am working on a project about file-sharing web page, the function of this project is something like `fileshare.io`
+
+- output your answer in simplified chinese.
+- 請拓展和潤飾我的文章
+
+```
+### 1.7 用戶故事 (user story)
+
+- 用戶 a 想分享檔案畀我, 但係 chatroom 除咗圖片之外唔可以 send 其他嘢
+- 用 a 將啲嘢拍成相片然之後再喺 chatroom 度 send 畀我, 我覺得好難睇
+- 我畀咗網頁連結 (louislabs.com/upload) 用戶 a, 用戶 a 上傳至網頁
+- 那個網頁接收檔案，生成連結, 用戶 A 復製連結
+- 用戶 a 把連結貼到 carousell chatroom 當中
+- 我經過連結攞取檔案, 完成
+```
+ -->
+
+#### 1.7.1 情境 1
+
+1.  用户 A 想要与我分享一些文件，但是聊天室只能发送图片和其他有限的文件类型。
+2.  用户 A 试图通过在聊天室中发送屏幕截图来分享文件，但我发现这些图片很难阅读和理解。
+3.  我向用户 A 提供了一个网页链接（louislabs.com/upload），用户 A 可以通过该链接上传文件。
+4.  该网页允许用户 A 选择要上传的文件，并生成一个唯一的链接。
+5.  用户 A 复制链接，并将其粘贴到 Carousell 聊天室中，与我分享。
+6.  我点击链接，可以轻松地查看和下载共享的文件。
+
+...

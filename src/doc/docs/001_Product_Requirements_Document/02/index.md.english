@@ -1,0 +1,43 @@
+# 2. Background and User Analysis
+
+## Overview
+This project aims to create a file-sharing web application as a convenient file transfer solution, eliminating the constraints of time and location for file sharing. The target audience for this product is the general public, making it a "To C" product.
+
+The motivation behind this idea stems from the need for a more efficient and convenient way to exchange files, which the creator believes is a common need for many individuals. The web application is envisioned to serve as a centralized file exchange hub, connecting people with file transfer requirements and enabling them to transcend traditional limitations, achieving seamless and efficient file sharing.
+
+## User Analysis
+Generally, those who need to share files with me are my users, and the platform is not open to the public.
+
+## Pain Points
+- When sharing files on Carousell, direct link sharing is often restricted due to Carousell's policies. As a result, users need to create a separate webpage to share files.
+- Carousell chat rooms are highly sensitive to links. When the system detects messages containing links exchanged between users, it blocks those messages. Additionally, Carousell lacks an intrinsic file transfer mechanism or method, necessitating a dedicated file-sharing webpage to address this issue.
+- To circumvent Carousell chat room link filtering algorithms, we need to construct a chat room-like interface on the webpage that enables users to share files without directly sending links.
+
+In summary, the project's objective is to craft a secure, user-friendly, and robust file-sharing webpage that overcomes the limitations of file sharing on the Carousell platform, offering a seamless and efficient user experience.
+
+## Comparison with Similar Products
+**Similar products include:**
+- wetransfer.com
+- filetransfer.io
+- sendanywhere.io
+- localsend.com
+- louislabs.com/upload (with Discord notification feature)
+
+**Competitor Analysis**
+
+| Feature | wetransfer.com | filetransfer.io | sendanywhere.io | localsend.com | louislabs.com/upload |
+| :-----: | :------------: | :-------------: | :-------------: | :------------: | :-----------------: |
+|  Upload |   Supported    |   Supported     |   Supported     |   Supported    |        ✔️         |
+|  Limit  |    10GB        |  No limit       |    10GB         |    10GB        |       100MB        |
+| Download | Register/Email |  No limit       |   Need app      |  No register   |         ✔️         |
+| Capacity |    10GB        |  No limit/7days |    10GB         |    10GB        |        100MB       |
+|  Type   |  Web/Mobile    |   Only Web      | Web/Mobile/App  |  Web/Mobile    |   Desktop/Mobile   |
+| Pricing |  Free/Paid    |  Free/Paid      |  Free/Paid      |    Free       |       Free         |
+
+**Tags:** file sharing, web application, centralized hub, seamless, efficient, user-friendly, security, Carousell alternative
+
+---
+
+**Description:** A file-sharing web application project, offering a convenient file transfer solution by eliminating time and location constraints. Aiming to create a simple and user-friendly platform for seamless file exchange, accessible to the general public.
+
+---

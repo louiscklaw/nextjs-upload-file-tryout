@@ -1,0 +1,21 @@
+# 6. Roles and Permissions
+
+## 6.1 **Role and Permission Matrix**
+
+> Objective: List out each page, list out each member's role, and the restrictions between them
+
+| No. | Page | Page Element | Restrictions |
+| :-: | :--: | :----------: | :----------: |
+| 1 | Upload Page | Upload Button | No special restrictions |
+| 2 | Success Page | Back Button | No special restrictions |
+| 2 | Success Page | Copy Carousell Link Button | No special restrictions |
+| 2 | Success Page | Copy Share Link Button | No special restrictions |
+| 3 | Error Page | Back Button | No special restrictions |
+
+## Description
+This PRD outlines the roles and permissions for various pages and page elements in an application. It aims to define the access and functionality available to different user roles, ensuring a structured and secure system. 
+
+## Tags
+- Access Control
+- User Roles
+- Page Permissions
