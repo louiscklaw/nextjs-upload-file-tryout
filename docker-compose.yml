@@ -11,7 +11,7 @@ services:
     # path to package.json
     working_dir: /app/src
 
-    command: sleep infinity
+    # command: sleep infinity
     # command: ./entry.sh
 
     volumes:
