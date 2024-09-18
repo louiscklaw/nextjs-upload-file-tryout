@@ -2,13 +2,13 @@
 # Dockerfile
 FROM node:18-buster
 
-RUN mkdir -p /app/src
-ADD ./src/app /app/src
+RUN mkdir -p /app
+ADD ./src/app /app
 
 # path to package.json
-WORKDIR /app/src
+WORKDIR /app
 
-RUN cd /app/src && yarn 
-RUN cd /app/src && yarn build
+RUN cd /app && yarn 
+RUN cd /app && yarn build
 
-# ENTRYPOINT ["./entry.sh"]
+ENTRYPOINT ["./entry.sh"]
