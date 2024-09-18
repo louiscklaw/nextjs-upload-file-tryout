@@ -19,14 +19,16 @@ services:
       - ./volumes/upload_store:/app/upload_store
       - ./volumes/zip_work_dir:/app/zip_work_dir
 
-    # healthcheck:
-    #   test: ['CMD', 'curl', '-f', 'http://localhost:3000/']
-    #   interval: 10s
-    #   timeout: 5s
-    #   retries: 3
-    #   start_period: 30s
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://localhost:3000/']
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
 
     deploy:
       resources:
+        limits:
+          cpus: '1'
         reservations:
-          cpus: '0.0001'
+          cpus: '0.001'
