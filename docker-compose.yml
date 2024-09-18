@@ -1,7 +1,7 @@
 # CREDIT: https://github.com/shren207/nextjs-docker-compose
 
 services:
-  upload_louislabs_com:
+  app:
     # build: .
     image: 192.168.10.61:5000/upload_louislabs_com
     ports:
@@ -11,8 +11,8 @@ services:
     # path to package.json
     working_dir: /app/src
 
-    # command: sleep infinity
-    command: ./entry.sh
+    command: sleep infinity
+    # command: ./entry.sh
 
     volumes:
       - ./volumes/.env.local:/app/src/.env.local
